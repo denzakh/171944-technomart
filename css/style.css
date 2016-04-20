@@ -1,0 +1,25 @@
+
+/* Шрифт Cuprum*/
+/*
+@import url(https://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic&subset=latin,cyrillic);
+*/
+
+/* Шрифт PT Sans*/
+
+/*@import url(https://fonts.googleapis.com/css?family=PT+Sans:700,400&subset=latin,cyrillic);*/
+
+
+
+.body {
+  font-family: "PT Sans", Verdana, sans-serif;
+  line-height: 140%;
+  font-size: 13px;
+  color: black;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #32425c;
+}
