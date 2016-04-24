@@ -40,6 +40,8 @@ h1, h2, h3, h4 {
   font-size: 24px;
   color: #32425c;
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 /* reset */
@@ -76,6 +78,10 @@ li {
   content: "";
   display: table;
   clear: both;
+}
+
+.hidden {
+  display: none;
 }
 
 /* header */
@@ -183,7 +189,6 @@ li {
   width: 300px;
 }
 
-
 .header-contact {
   float: left;
   margin-left: 50px;
@@ -225,14 +230,108 @@ li {
   float: right;
 }
 
+.promo-right .section-card:last-child {
+  margin-bottom: 0;
+}
+
+/* slider */
 .slider-promo-box {
+  position: relative;
   clear: both;
   width: 621px;
   height: 266px;
 }
 
-.promo-right .section-card:last-child {
-  margin-bottom: 0;
+.slider-promo-label,
+.slider-promo-indicator {
+  position: absolute;
+  z-index: 30;
+}
+
+.slider-promo-label:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  z-index: 20;
+}
+
+.promo-label-left:before {
+  transform: rotate(-45deg);
+  top: 15px;
+  left: 28px;
+}
+
+.promo-label-right:before {
+  transform: rotate(135deg);
+  top: 15px;
+  right: 26px;
+}
+
+.slider-promo-sl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 32px 25px;
+}
+
+
+.slider-promo-sl-1 {
+  position: absolute;
+  z-index: 10;
+}
+
+#slider-promo:checked + .slider-promo-inner > .slider-promo-sl-1 {
+  display: none;
+}
+
+.slider-btn {
+  position: absolute;
+  bottom: 22px;
+  left: 25px;
+  z-index: 30;
+}
+
+.slider-promo-label {
+  width: 100px;
+  height: 58px;
+  top: 105px;
+}
+
+.promo-label-right {
+  right: 0px;
+}
+
+.slider-promo-indicator {
+  bottom: 36px;
+  width: 6px;
+  height: 6px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: #ee3643;
+}
+
+.promo-indicator-1 {
+  left: 295px;
+}
+
+.promo-indicator-2 {
+  left: 315px;
+}
+
+
+#slider-promo:checked + .slider-promo-inner >  .promo-indicator-2,
+#slider-promo + .slider-promo-inner >  .promo-indicator-1 {
+    background: #ee3643;
+}
+
+#slider-promo:checked + .slider-promo-inner >  .promo-indicator-1,
+#slider-promo + .slider-promo-inner >  .promo-indicator-2 {
+    background: #ffffff;
 }
 
 
@@ -275,7 +374,7 @@ li {
   width: 218px;
   height: 144px;
   margin-bottom: 20px;
-  margin-right: 17.2px;
+  margin-right: 16px;
 /*  background: #ffffff;*/
   border: 1px solid #cccccc;
   text-align: center;
@@ -373,42 +472,61 @@ li {
   font-size: 16px;
   line-height: 23px;
   color: #ee3643;
-  letter-spacing: -0.02em;
 }
 
+.slider-promo-sl h4 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
 
+.slider-promo-sl p {
+  font-size: 18px;
+  color: #ffffff;
+}
 
+.btn {
+  padding: 10px 50px;
+  background: #ee3643;
+  border-radius: 3px;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family:  "Cuprum", Arial, sans-serif;
+}
 /******************************************************
                       графика
 ******************************************************/
 
-/*
+
 .card-materials {
-  background: url(../img/promo-materials24.png) 50% 50% no-repeat;
+  background:  #f6b22d url(../img/promo-materials24.png) 88% 52% no-repeat;
 }
 
 .card-instruments {
-  background: url(../img/promo-instruments24.png) 50% 50% no-repeat;
+  background: #4aafde url(../img/promo-instruments24.png) 88% 52% no-repeat;
 }
 
 .card-technics {
-  background: url(../img/promo-technics24.png) 50% 50% no-repeat;
+  background: #cc79d1 url(../img/promo-technics24.png)  86% 52%  no-repeat;
 }
 
-*.card-sales {
-background: url(../img/promo-sales24.png) 50% 50% no-repeat;
+.card-sales {
+background: #85d179 url(../img/promo-sales24.png)  84% 52% no-repeat;
 }
 
 .card-delivery {
-background: url(../img/promo-delivery24.png) 50% 50% no-repeat;
+background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
 }
-*/
+
 .slider-promo-sl-1 {
-  background: url(../img/promo-slider-1.jpg) 50% 50% no-repeat;
+  background: url(../img/slider-1.jpg) 0 0 no-repeat;
 }
 
 .slider-promo-sl-2 {
-  background: url(../img/promo-slider-2.jpg) 50% 50% no-repeat;
+  background: url(../img/slider-2.jpg) 0 0 no-repeat;
 }
 
 .product-card img {
