@@ -9,7 +9,7 @@
   </head>
   <body>
     <header class="header-main">
-      <!-- предполагается псевдоэлемент header:after для фона -->
+      <!-- переделать хеадер -->
       <div class="container">
         <nav class="nav-top">
           <ul class="ul-top">
@@ -19,9 +19,7 @@
             <li class="nav-top-i2">
               <form action="search.php" method="get" class="search search-header" name="search-header">
                 <input type="search" class="search-header-field" value="Поиск">
-                <input type="submit" class="search-hidden-btn">
               </form>
-                <!-- предполагается скрыть кнопку отправки -->
             </li>
             <li class="nav-top-i3">
               <a href="" class="numbers-top-bookmarks numbers-top">Закладки:</a>
@@ -68,6 +66,7 @@
     </header>
 
     <main class="">
+
       <div class="breadcrumb container">
         <ul>
           <li><a href="" title="Главная"></a></li>
@@ -78,13 +77,14 @@
       </div>
 
       <section class="products-class container">
+
         <div class="products-class-header-box">
-          <h2 class="products-class-header">Перфораторы</h2>
+          <h1 class="products-class-header">Перфораторы</h1>
         </div>
         <!-- левый блок фильтров -->
         <div class="products-sort-box">
           <form action="#" name="products-sort">
-            <h3>Фильтр</h3>
+            <span class="sort-header">Фильтр</span>
             <div class="price-filter">
               <h4>Цена:</h4>
               <!--
@@ -117,11 +117,11 @@
               <h4>Питание:</h4>
               <label for="power-1" class="power-filter-radio-label">
                 <input type="radio" class="hidden" name="power" value="battery" id="power-1">
-                аккумуляторные
+                Аккумуляторные
               </label>
               <label for="power-2" class="power-filter-radio-label">
                 <input type="radio" class="hidden" name="power" value="mains" id="power-2">
-                сетевые
+                Сетевые
               </label>
             </div>
             <input type="submit" value="Показать" class="btn products-filter-submit">
@@ -131,16 +131,18 @@
         <!-- правый блок товаров и сортировки -->
         <div class="products-class-box">
           <!-- тулбар сортировки -->
-          <span>Сортировка:</span>
-          <span class="sort-by by-price"><a href="" class="sort-inner">по цене</a></span>
-          <span class="sort-by by-type"><a href="" class="sort-inner">по типу</a></span>
-          <span class="sort-by by-function"><a href="" class="sort-inner">по функционалу</a></span>
-          <span class="sort-by sort-direction">
+          <span class="sort-header">Сортировка:</span>
+          <div class="sort-by">
+            <span class="sort-by by-price"><a href="" class="sort-inner">по цене</a></span>
+            <span class="sort-by by-type"><a href="" class="sort-inner">по типу</a></span>
+            <span class="sort-by by-function"><a href="" class="sort-inner">по функционалу</a></span>
+          </div>
+          <div class="sort-by sort-direction">
             <a href="" class="sort-direct">&#9650;</a>
             <a href="" class="sort-reverse">&#9660;</a>
-          </span>
+          </div>
         </div>
-          <!-- отсортированный товар -->
+          <!-- отсортированный товар, добавить всплывающий див -->
         <div class="sort-products">
           <!-- 1 ряд -->
           <div class="product-card">
@@ -201,14 +203,17 @@
             <span class="product-old-price"></span><br>
             <a href="" class="product-new-price">12500 P.</a>
           </div>
+
+          <div class="pages">
+            <a href="" class="page">1</a>
+            <a href="" class="page">2</a>
+            <a href="" class="page">3</a>
+            <a href="" class="page">Следующая</a>
+          </div>
+
         </div>
         <!-- страницы -->
-        <div class="pages">
-          <a href="" class="page">1</a>
-          <a href="" class="page">2</a>
-          <a href="" class="page">3</a>
-          <a href="" class="page">следующая</a>
-        </div>
+
       </section>
 
       <section class="additional">

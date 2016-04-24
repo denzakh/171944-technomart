@@ -1,20 +1,37 @@
 
+/******************************************************
+              Общие установки и подсветка
+******************************************************/
+
+/* подсветка */
+
+body > *, body > * > *, body > * > * >*, body > * > * >* > * {
+  background: rgba(200,200,10,0.2);
+}
+
+.outline {
+  background: rgba(200,100,10,0.2);
+  outline: 1px solid red;
+}
+
+/* подключение шрифтов */
+
 /* Шрифт Cuprum*/
-/*
 @import url(https://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic&subset=latin,cyrillic);
-*/
-
 /* Шрифт PT Sans*/
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:700,400&subset=latin,cyrillic);
 
-/*@import url(https://fonts.googleapis.com/css?family=PT+Sans:700,400&subset=latin,cyrillic);*/
+/* общие */
 
-
-
-.body {
+body {
   font-family: "PT Sans", Verdana, sans-serif;
   line-height: 140%;
   font-size: 13px;
-  color: black;
+  color: #000000;
+  background: url(../img/technomart-index.jpg) 50% 0 no-repeat;
+  padding: 0;
+  margin: 0;
+
 }
 
 h1, h2, h3, h4 {
@@ -22,4 +39,386 @@ h1, h2, h3, h4 {
   font-weight: bold;
   font-size: 24px;
   color: #32425c;
+  margin: 0;
 }
+
+/* reset */
+
+div, nav, section,
+p, ul,
+h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+/* не понимаю, чем normalize.css лучше чем reset.css,
+все равно приходиться обнулять свойства */
+
+/******************************************************
+                         сетки
+******************************************************/
+
+/* общие */
+
+.container {
+  box-sizing: border-box;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* header */
+
+.header-bottom-part {
+  padding-top: 46px;
+  min-height: 232px;
+}
+
+.header-center {
+
+  min-height: 90px;
+}
+
+.nav-header-main {
+  margin-top: 22px;
+}
+
+.nav-header-main ul {
+  min-height: 60px;
+}
+
+/* main */
+
+.promo {
+  margin-top: 59px;
+  min-height: 409px;  /* можно удалить после разметки внутренних блоков*/
+}
+
+.promo-left {
+  float: left;
+  width: 620px;
+}
+
+.promo-right  {
+  float: right;
+  width: 300px;
+}
+
+.popular-products {
+  margin-top: 53px;
+}
+
+.popular-brands {
+  margin-top: 21px;
+  min-height: 505px;  /* можно удалить после разметки внутренних блоков*/
+}
+
+.service {
+  min-height: 456px;  /* можно удалить после разметки внутренних блоков*/
+  padding-top: 67px;
+}
+
+.service-top
+ {
+  min-height: 60px;  /* можно удалить после разметки внутренних блоков*/
+}
+
+.about {
+  min-height: 534px;  /* можно удалить после разметки внутренних блоков*/
+  padding-top: 80px;
+}
+
+.footer-bottom {
+    padding-top: 36px;
+}
+
+
+
+/******************************************************
+          внутреннее расположение блоков
+******************************************************/
+
+/* в header */
+
+.header-tagline {
+  float: left;
+}
+
+.header-account {
+  float: right;
+}
+
+.logo-main {
+  float: left;
+}
+
+.logo-main a {
+  display: block;
+  width: 218px;
+  height: 42px;
+/*  background-color: #ee3643;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 24px;
+  text-decoration: none;*/
+}
+
+.header-search {
+  float: left;
+}
+
+.header-order {
+  float: right;
+  width: 300px;
+}
+
+
+.header-contact {
+  float: left;
+  margin-left: 50px;
+}
+
+.nav-item {
+  float: left;
+  min-width: 100px;
+}
+
+.nav-header-main {
+  text-align: center;
+}
+.nav-header-main ul {
+  display: inline-block;
+
+}
+
+.nav-item a {
+  display: block;
+  padding: 18px 35px;
+  background: rgba(100,200,10,0.2);
+}
+
+/* в promo */
+
+.section-card {
+  width: 300px;
+  height: 123px;
+  margin-bottom: 20px;
+  background: rgba(0,100,100,0.5);
+}
+
+.promo-left .section-card:first-child {
+  float: left;
+}
+
+.promo-left .section-card:nth-child(2) {
+  float: right;
+}
+
+.slider-promo-box {
+  clear: both;
+  width: 621px;
+  height: 266px;
+}
+
+.promo-right .section-card:last-child {
+  margin-bottom: 0;
+}
+
+
+/* popular */
+
+.popular-top {
+  min-height: 89px;
+  margin-bottom: 20px;
+}
+
+.product-card {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 218px;
+  min-height: 318px;
+  margin-right: 19px;
+  padding-top: 180px;
+}
+
+.product-card:last-child {
+    margin-right: 0;
+}
+
+.product-card b,
+.product-card span,
+.product-card a {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.brand-card {
+  -text-align: justify;
+}
+
+.brand-link {
+  display: inline-block;
+  width: 218px;
+  height: 144px;
+  margin-bottom: 20px;
+  margin-right: 17.2px;
+/*  background: #ffffff;*/
+  border: 1px solid #cccccc;
+  text-align: center;
+  line-height: 140px;
+}
+
+.brand-link:nth-child(4n) {
+  margin-right: 0;
+}
+
+.brand-link img {
+  vertical-align: middle;
+}
+
+/* services & about */
+
+.about-index  {
+  float: left;
+  width: 620px;
+}
+
+.contact-index  {
+  float: right;
+  width: 300px;
+}
+
+/* в footer */
+
+.footer-top-company {
+  float: left;
+  min-width: 340px;
+}
+
+.footer-top-nav {
+  float: right;
+  min-width: 560px;
+}
+
+.nav-footer-top li,
+.nav-footer-bottom li {
+  width: 120px;
+  float: right;
+  text-align: right;
+}
+
+.footer-contact {
+  width: auto;
+  clear: both;
+}
+
+.logo-footer,
+.nav-footer-top,
+.footer-contact,
+.nav-footer-bottom {
+  min-height: 96px;
+}
+
+.footer-copyright
+{
+  float: left;
+  min-width: 240px;
+}
+
+.footer-social {
+  float: left;
+  min-width: 100px;
+  margin-left: 150px;
+}
+
+.footer-mail-and-copyright {
+  float: right;
+  min-width: 300px;
+}
+
+.footer-mail {
+  float: left;
+  min-width: 160px;
+}
+
+.footer-copyright-studio {
+  float: right;
+  min-width: 110px;
+}
+
+/******************************************************
+               шрифты и оформление
+******************************************************/
+
+.header-tagline {
+  width: 220px;
+  padding-top: 3px;
+  margin-left: 51px;
+  font-family: "Cuprum";
+  font-style: italic;
+  font-size: 16px;
+  line-height: 23px;
+  color: #ee3643;
+  letter-spacing: -0.02em;
+}
+
+
+
+/******************************************************
+                      графика
+******************************************************/
+
+/*
+.card-materials {
+  background: url(../img/promo-materials24.png) 50% 50% no-repeat;
+}
+
+.card-instruments {
+  background: url(../img/promo-instruments24.png) 50% 50% no-repeat;
+}
+
+.card-technics {
+  background: url(../img/promo-technics24.png) 50% 50% no-repeat;
+}
+
+*.card-sales {
+background: url(../img/promo-sales24.png) 50% 50% no-repeat;
+}
+
+.card-delivery {
+background: url(../img/promo-delivery24.png) 50% 50% no-repeat;
+}
+*/
+.slider-promo-sl-1 {
+  background: url(../img/promo-slider-1.jpg) 50% 50% no-repeat;
+}
+
+.slider-promo-sl-2 {
+  background: url(../img/promo-slider-2.jpg) 50% 50% no-repeat;
+}
+
+.product-card img {
+    position: absolute;
+    top:0;
+    left: auto; right: auto;
+    z-index: -10;
+}
+
+.product-card img:hover {
+  display: none;
+}
+
