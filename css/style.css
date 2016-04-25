@@ -34,7 +34,8 @@ body {
 
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4,
+.logo-main {
   font-family: "Cuprum", Arial, sans-serif;
   font-weight: bold;
   font-size: 24px;
@@ -73,6 +74,11 @@ li {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.container-plus {
+  padding-right: 2px;
+}
+
 
 .clear:after {
   content: "";
@@ -204,6 +210,7 @@ li {
 }
 .nav-header-main ul {
   display: inline-block;
+  vertical-align: top;
 
 }
 
@@ -271,11 +278,12 @@ li {
 }
 
 .slider-promo-sl {
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 620px;
+  height: 266px;
   padding: 32px 25px;
 }
 
@@ -371,6 +379,7 @@ li {
 
 .brand-link {
   display: inline-block;
+  vertical-align: top;
   width: 218px;
   height: 144px;
   margin-bottom: 20px;
@@ -389,7 +398,118 @@ li {
   vertical-align: middle;
 }
 
-/* services & about */
+/* services  */
+
+.service-top {
+  height: 170px;
+}
+
+.service-menu {
+  float: left;
+  width: 235px;
+}
+
+.service-menu label {
+  box-sizing: border-box;
+  display: block;
+  padding-left: 23px;
+  height: 61px;
+  border-top: 1px solid #405069;
+  border-bottom: 1px solid #32425c;
+  /*background: #32425c;*/
+  font-family: "Cuprum", Arial, sans-serif;
+  font-weight: bold;
+  line-height: 55px;
+  vertical-align: middle;
+  font-size: 21px;
+  color: #000000;
+}
+
+.service-display {
+  float: left;
+  width: 600px;
+  padding-left: 86px;
+  position: relative;
+}
+
+.service-display:before  {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 280px;
+  top: -50px;
+  left: 0;
+  background: #f2f6f8;
+  z-index: 60;
+}
+
+.service-display:after  {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 260px;
+  top: -40px;
+  left: 0;
+  border-radius: 50%;
+  z-index: 50;
+  box-shadow:  -3px 0 6px 0 #cccccc;
+}
+
+
+.service-main {
+  display: none;
+  position: relative;
+}
+
+#service-1:checked + .service-main,
+#service-2:checked + .service-main,
+#service-3:checked + .service-main {
+  display: block;
+
+}
+
+#service-1:checked + .service-main:after,
+#service-2:checked + .service-main:after,
+#service-3:checked + .service-main:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 550px;
+  height: 285px;
+  top: -1px;
+  left: 100px;
+  z-index: 10;
+  outline: 1px solid green;
+}
+
+.service-main p,
+.service-main h3,
+.service-main a {
+  position: absolute;
+  z-index: 30;
+}
+
+.service-main h3 {
+  top: 8px;
+  font-size: 36px;
+}
+
+.service-main p {
+  top: 60px;
+  line-height: 24px;
+}
+
+.service-main .btn {
+  box-sizing: border-box;
+  top: 134px;
+  width: 195px;
+}
+
+
+
+/* about */
 
 .about-index  {
   float: left;
@@ -487,7 +607,8 @@ li {
 }
 
 .btn {
-  padding: 10px 50px;
+  display: table;
+  padding: 10px;
   background: #ee3643;
   border-radius: 3px;
   text-align: center;
@@ -495,7 +616,9 @@ li {
   text-transform: uppercase;
   text-decoration: none;
   font-family:  "Cuprum", Arial, sans-serif;
+  font-size: 14px;
 }
+
 /******************************************************
                       графика
 ******************************************************/
@@ -522,11 +645,11 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
 }
 
 .slider-promo-sl-1 {
-  background: url(../img/slider-1.jpg) 0 0 no-repeat;
+  background: #59493a url(../img/slider-1.jpg) 0 0 no-repeat;
 }
 
 .slider-promo-sl-2 {
-  background: url(../img/slider-2.jpg) 0 0 no-repeat;
+  background: #59493a url(../img/slider-2.jpg) 0 0 no-repeat;
 }
 
 .product-card img {
@@ -540,3 +663,14 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
   display: none;
 }
 
+#service-1:checked + .service-main:after {
+  background: #f2f6f8 url(../img/delivery24.png) 50px 24px no-repeat;
+}
+
+#service-2:checked + .service-main:after {
+  background: #f2f6f8 url(../img/guarantee24.png) 138px 2px no-repeat;
+}
+
+#service-3:checked + .service-main:after {
+  background: #f2f6f8 url(../img/credite24.png) 80px 0 no-repeat;
+}
