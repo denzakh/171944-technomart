@@ -34,8 +34,7 @@ body {
 
 }
 
-h1, h2, h3, h4,
-.logo-main {
+h1, h2, h3, h4 {
   font-family: "Cuprum", Arial, sans-serif;
   font-weight: bold;
   font-size: 24px;
@@ -93,11 +92,6 @@ li {
   padding-left: 10px;
   padding-right: 10px;
 }
-
-.container-plus {
-  padding-right: 2px;
-}
-
 
 .clear:after {
   content: "";
@@ -160,7 +154,6 @@ li {
  padding-bottom: 102px;
 }
 
-
 .about {
   min-height: 534px;  /* можно удалить после разметки внутренних блоков*/
   padding-top: 80px;
@@ -176,44 +169,134 @@ li {
           внутреннее расположение блоков
 ******************************************************/
 
-/* в header */
+/* header - верхняя строка */
+
+.logo-main {
+  float: left;
+}
+
+.header-top-menu,
+.header-top-menu a {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 17px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+/*  background: #293449;*/
+}
+
+.logo-main a {
+  display: block;
+  font-size: 24px;
+  width: 220px;
+  background-color: #ee3643;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 24px;
+  padding-top: 2px;
+  box-shadow: 0 4px 0 0 #b52933;
+}
+
+.header-order a {
+  display: inline-block;
+  width: 120px;
+  height: 41px;
+  padding-left: 30px;
+}
+
+a.btn-for-order-header {
+  width: 150px;
+  padding: 0;
+}
+
+.header-search {
+  float: left;
+  margin-left: 50px;
+  line-height: 32px;
+}
+
+.header-search input {
+  width: 160px;
+  height: 26px;
+  margin-top: 5px;
+  color: #ffffff;
+  border: none;
+  background: transparent;
+
+}
+
+.header-order {
+  float: right;
+}
+
+/* header - tagline */
 
 .header-tagline {
   float: left;
+  width: 220px;
+  padding-top: 3px;
+  margin-left: 51px;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 23px;
+  color: #ee3643;
+  text-transform: none;
+}
+
+.header-contact {
+  float: left;
+  margin-left: 50px;
+  font-family: "Cuprum", Arial, sans-serif;
+  text-align: center;
+}
+
+
+.header-tel {
+  width: 248px;
+  color: #e9292a;
+  border: 3px solid #ffffff;
+  font-size: 21px;
+  line-height: 18px;
+  padding: 10px 0;
+  padding-left: 17px;
+}
+
+.header-adress {
+  margin-top: 9px;
+  font-size: 14px;
 }
 
 .header-account {
   float: right;
 }
 
-.logo-main {
-  float: left;
-}
-
-.logo-main a {
-  display: block;
-  width: 218px;
-  height: 42px;
-  background-color: #ee3643;
-  color: #ffffff;
-  text-transform: capitalize;
-  font-size: 24px;
+.btn-enter,
+.btn-registration {
+  box-sizing: border-box;
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 13px;
   text-decoration: none;
+  text-align: center;
+  opacity: 0.3;
 }
 
-.header-search {
-  float: left;
+.btn-enter {
+  width: 122px;
+  padding-left: 22px;
 }
 
-.header-order {
-  float: right;
-  width: 300px;
+.btn-registration {
+  width: 150px;
 }
 
-.header-contact {
-  float: left;
-  margin-left: 50px;
-}
+
+/* header - навигация */
 
 .nav-item {
   float: left;
@@ -223,6 +306,7 @@ li {
 .nav-header-main {
   text-align: center;
 }
+
 .nav-header-main ul {
   display: inline-block;
   vertical-align: top;
@@ -374,7 +458,6 @@ li {
 .btn-more {
   float: right;
   width: 230px;
-  opacity: 0.1;
 }
 
 
@@ -680,16 +763,6 @@ li {
 
 /* header */
 
-.header-tagline {
-  width: 220px;
-  padding-top: 3px;
-  margin-left: 51px;
-  font-family: "Cuprum";
-  font-style: italic;
-  font-size: 16px;
-  line-height: 23px;
-  color: #ee3643;
-}
 
 
 
