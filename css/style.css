@@ -4,11 +4,11 @@
 ******************************************************/
 
 /* подсветка */
-
+/*
 body > *, body > * > *, body > * > * >*, body > * > * >* > * {
   background: rgba(200,200,10,0.2);
 }
-
+*/
 .outline {
   background: rgba(200,100,10,0.2);
   outline: 1px solid red;
@@ -31,7 +31,6 @@ body {
   background: url(../img/technomart-index.jpg) 50% 0 no-repeat;
   padding: 0;
   margin: 0;
-
 }
 
 h1, h2, h3, h4 {
@@ -45,6 +44,7 @@ h1, h2, h3, h4 {
 }
 
 .btn {
+  box-sizing: border-box;
   display: table;
   padding: 10px;
   background: #ee3643;
@@ -55,6 +55,18 @@ h1, h2, h3, h4 {
   text-decoration: none;
   font-family:  "Cuprum", Arial, sans-serif;
   font-size: 14px;
+}
+
+.new span.new-label {
+  position: absolute;
+  display: table;
+  font-size: 13px;
+  top: 5px;
+  right: -30px;
+  padding: 5px 40px;
+  color: #ffffff;
+  background-color: #ee3643;
+  transform: rotate(45deg);
 }
 
 h2 {
@@ -149,7 +161,7 @@ li {
 }
 
 .service {
- margin-top: 66px;
+ margin-top: 64px;
  padding-top: 70px;
  padding-bottom: 102px;
 }
@@ -224,7 +236,6 @@ a.btn-for-order-header {
   color: #ffffff;
   border: none;
   background: transparent;
-
 }
 
 .header-order {
@@ -288,7 +299,8 @@ a.btn-for-order-header {
 
 .btn-enter {
   width: 122px;
-  padding-left: 22px;
+  padding-left: 30px;
+  margin-right: 5px;
 }
 
 .btn-registration {
@@ -313,18 +325,54 @@ a.btn-for-order-header {
 }
 
 .nav-item a {
+  box-sizing: border-box;
   display: block;
-  padding: 18px 35px;
-  background: rgba(100,200,10,0.2);
+  padding: 18px 30px;
+  padding-bottom: 17px;
+  background: #32425c;
+  border-bottom: 5px solid #293449;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 20px;
 }
 
-/* в promo */
+.nav-item:first-child a {
+  padding-left: 56px;
+}
+
+.nav-item:last-child a {
+  padding-right: 56px;
+}
+
+/* main - promo */
 
 .section-card {
+  box-sizing: border-box;
+  position: relative;
   width: 300px;
   height: 123px;
+  padding: 27px 22px;
   margin-bottom: 20px;
-  background: rgba(0,100,100,0.5);
+  font-family: "Cuprum", Arial, sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.section-card .new-label {
+  display: none;
+}
+
+.card-name {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.card-btn {
+  width: 135px;
+  margin-top: 15px;
+  padding: 10px;
+  margin-left: 2px;
 }
 
 .promo-left .section-card:first-child {
@@ -339,7 +387,8 @@ a.btn-for-order-header {
   margin-bottom: 0;
 }
 
-/* slider */
+/* main - slider */
+
 .slider-promo-box {
   position: relative;
   clear: both;
@@ -396,6 +445,7 @@ a.btn-for-order-header {
 
 .slider-btn {
   position: absolute;
+  width: 195px;
   bottom: 22px;
   left: 25px;
   z-index: 30;
@@ -428,7 +478,6 @@ a.btn-for-order-header {
   left: 315px;
 }
 
-
 #slider-promo:checked + .slider-promo-inner >  .promo-indicator-2,
 #slider-promo + .slider-promo-inner >  .promo-indicator-1 {
     background: #ee3643;
@@ -439,12 +488,11 @@ a.btn-for-order-header {
     background: #ffffff;
 }
 
-
-/* popular */
+/* main - popular */
 
 .popular-top {
   /*min-height: 89px;*/
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   padding: 25px 25px;
 }
 
@@ -452,40 +500,124 @@ a.btn-for-order-header {
   font-size: 30px;
   float: left;
   padding-top: 10px;
-
 }
 
 .btn-more {
   float: right;
-  width: 230px;
+  width: 253px;
 }
 
 
 .product-card {
   box-sizing: border-box;
   position: relative;
-  display: inline-block;
+  float: left;
+  display: block;
   vertical-align: top;
-  min-width: 218px;
+  width: 219px;
   min-height: 318px;
-  margin-right: 19px;
+  margin-right: 21px;
   padding-top: 180px;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
 }
 
 .product-card:last-child {
-    margin-right: 0;
+  float: right;
+  margin-right: 0;
 }
 
-.product-card b,
-.product-card span,
-.product-card a {
+.product-card .product-name,
+.product-old-price {
   position: relative;
   display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+
+.product-old-price {
+  font-size: 17px;
+  line-height: 18px;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.product-new-price {
+  position: absolute;
+  bottom: 20px;
+  left: 42px;
+  width: 122px;
+  font-size: 17px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.product-new-price:after {
+  content: "";
+  position: absolute;
+  right: -19px;
+  top: 0;
+  border: 19px solid transparent;
+  border-left: 19px solid #ee3643;
+  border-right: none;
+}
+
+.product-card .new-label {
+  display: none;
+}
+
+.btns-card {
+  display: none;
+  position: absolute;
+  top: 43px;
+  width: 100%;
   text-align: center;
 }
 
+.btns-card .btn-card-bookmarks,
+.btns-card .btn-card-bay {
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 8px;
+  width: 135px;
+  height: 38px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.btns-card .btn-card-bay {
+  background: #63a63e;
+  border-bottom: 4px solid #367315;
+  padding-top: 10px;
+}
+
+.btns-card .btn-card-bookmarks {
+  background: #ffffff;
+  border: 3px solid #63a63e;
+  color: #32425c;
+  padding-top: 7px;
+}
+
+.product-card:hover > .btns-card {
+  display: block;
+}
+
+.product-card:hover > .product-img {
+  display: none;
+}
+
+
+/* main - brands */
+
 .brand-card {
-  -text-align: justify;
 }
 
 .brand-link {
@@ -513,6 +645,7 @@ a.btn-for-order-header {
 
 .service-top {
   margin-bottom: 70px;
+  background: #f7f3ec;
 }
 
 .service-top h2 {
@@ -574,7 +707,7 @@ a.btn-for-order-header {
   left: 0;
   border-radius: 50%;
   z-index: 50;
-  box-shadow:  -3px 0 6px 0 #cccccc;
+  box-shadow: -3px 0 6px 0 #cccccc;
 }
 
 .service-main {
@@ -586,7 +719,6 @@ a.btn-for-order-header {
 #service-2:checked + .service-main,
 #service-3:checked + .service-main {
   display: block;
-
 }
 
 #service-1:checked + .service-main:after,
@@ -621,11 +753,9 @@ a.btn-for-order-header {
 }
 
 .service-main .btn {
-  box-sizing: border-box;
   top: 134px;
   width: 195px;
 }
-
 
 
 /* about */
@@ -678,7 +808,7 @@ a.btn-for-order-header {
 
 .btn-about {
   margin-top: 38px;
-  width: 200px;
+  width: 220px;
 }
 
 .map-small {
@@ -792,7 +922,7 @@ a.btn-for-order-header {
                       графика
 ******************************************************/
 
-
+/*
 .card-materials {
   background:  #f6b22d url(../img/promo-materials24.png) 88% 52% no-repeat;
 }
@@ -812,7 +942,7 @@ background: #85d179 url(../img/promo-sales24.png)  84% 52% no-repeat;
 .card-delivery {
 background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
 }
-
+*/
 .slider-promo-sl-1 {
   background: #59493a url(../img/slider-1.jpg) 0 0 no-repeat;
 }
