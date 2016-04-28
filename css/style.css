@@ -663,12 +663,16 @@ a.btn-for-order-header {
 .service-menu {
   float: left;
   width: 235px;
+  height: 183px;
 }
 
-.service-menu label {
+.service-label {
   box-sizing: border-box;
+  position: absolute;
   display: block;
+  left: -235px;
   padding-left: 23px;
+  width: 235px;
   height: 61px;
   border-top: 1px solid #405069;
   border-bottom: 1px solid #293449;
@@ -681,9 +685,24 @@ a.btn-for-order-header {
   color: #ffffff;
 }
 
-.service-menu .service-label:checked {
+.service-label-1 {
+  top: 0;
+}
+
+.service-label-2 {
+  top: 61px;
+}
+
+.service-label-3 {
+  top: 122px;
+}
+
+#service-1:checked ~ .service-label-1,
+#service-2:checked ~ .service-label-2,
+#service-3:checked ~ .service-label-3 {
   background: #ffffff;
   color: #000000;
+  border: none;
 }
 
 .service-display {
@@ -715,7 +734,7 @@ a.btn-for-order-header {
   left: 0;
   border-radius: 50%;
   z-index: 50;
-  box-shadow: -2px 0 15px 0 #000000;
+  box-shadow: 3px 0 20px 0 #000000;
 }
 
 .service-main {
