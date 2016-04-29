@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Проект Техномарт базового 13 интенсива по HTML и CSS">
+    <link href="fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic&subset=latin,cyrillic"  rel="stylesheet" type="text/css">
+    <link href="fonts.googleapis.com/css?family=PT+Sans:700,400&subset=latin,cyrillic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>HTML Academy: Техномарт</title>
@@ -13,15 +15,16 @@
       <div class="header-top-menu">
         <div class="container clear">
           <div class="logo-main">
-            <a href="/" >Техномарт</a>
+            <a href="index.html" class="">Техномарт</a>
           </div>
-          <form action="search.php" method="get" class="search header-search" name="header-search">
-            Поиск: <input type="search" class="header-search-field" value="" name="search">
+          <form action="search.php" method="get" class="search header-search" name="header-search" >
+            <input type="search" class="header-search-field" value="" name="search" id="header-search-1" placeholder="Поиск:">
+            <label for="header-search-1" class="icon-search"></label>
           </form>
-          <div class="header-order">
-            <a href="" class="numbers-top-bookmarks numbers-top">Закладки: 0</a>
-            <a href="" class="numbers-top-cart numbers-top ">Корзина: 0</a>
-            <a href="" class="btn-for-order-header ">Оформить заказ</a>
+          <div class="header-order clear">
+            <a href="" class="numbers-top-bookmarks numbers-top icon-bookmark">Закладки: 0</a>
+            <a href="" class="numbers-top-cart numbers-top icon-basket">Корзина: 0</a>
+            <a href="" class="btn-for-order-header">Оформить заказ</a>
           </div>
         </div>
       </div>
@@ -243,27 +246,27 @@
       </section>
     </main>
     <!-- дописать логотип и адрес -->
-    <footer class="footer-main outline">
-      <div class="footer-top outline">
-        <div class="container outline clear">
-          <div class="footer-top-company outline">
+    <footer class="footer-main">
+      <div class="footer-top ">
+        <div class="container clear">
+          <div class="footer-top-company ">
             <div class="logo-footer">
-              <a href="/" >Техномарт</a>
+              <a href="index.html" >Техномарт</a>
             </div>
-            <div class="footer-contact outline">
-              <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-              <p>+7 (812) 555-05-50</p>
+            <div class="footer-contact">
+              <p class="">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+              <p class="">+7 (812) 555-05-50</p>
             </div>
           </div>
-          <nav class="footer-top-nav outline">
-            <ul class="nav-footer-top outline">
+          <nav class="footer-top-nav">
+            <ul class="nav-footer-top">
               <li><a href="" class="nav-item-footer">Компания</a></li>
               <li><a href="" class="nav-item-footer">Новости </a></li>
               <li><a href="" class="nav-item-footer">Каталог </a></li>
               <li><a href="" class="nav-item-footer">Доставка </a></li>
               <li><a href="" class="nav-item-footer">Контакты</a></li>
             </ul>
-            <ul class="nav-footer-bottom outline">
+            <ul class="nav-footer-bottom">
               <li><a href="" class="nav-item-footer">Материалы</a></li>
               <li><a href="" class="nav-item-footer ">Техника</a></li>
               <li><a href="" class="nav-item-footer">Инструмент</a></li>
@@ -273,24 +276,24 @@
         </div>
       </div>
 
-      <div class="footer-bottom ">
+      <div class="footer-bottom">
         <div class="container clear">
-          <div class="footer-copyright  outline">
+          <div class="footer-copyright">
             <p>© 2010–2016 Компания «Техномарт»<br>
             Все права защищены</p>
           </div>
-          <div class="footer-social outline">
-            <a href="" class="social-btn social-vk">1</a>
-            <a href="" class="social-btn social-fb">2</a>
-            <a href="" class="social-btn social-inst">3</a>
+          <div class="footer-social">
+            <a href="" class="social-btn social-vk icon-vk"></a>
+            <a href="" class="social-btn social-fb icon-facebook"></a>
+            <a href="" class="social-btn social-inst icon-instagramm"></a>
           </div>
           <div class="footer-mail-and-copyright clear">
-            <div class="footer-mail outline"><p>Обратная связь: <br>
+            <div class="footer-mail"><p>Обратная связь: <br>
               <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
               </div>
-            <div class="footer-copyright-studio outline">
-              <p>Разработано: <br>
-              <a href="" >HTML-academy</a></p>
+            <div class="footer-copyright-studio ">
+              <p>Разработано &ndash;<br>
+              <a href="" >htmlacademy.ru</a></p>
             </div>
           </div>
         </div>
