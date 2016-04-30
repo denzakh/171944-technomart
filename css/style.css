@@ -411,7 +411,8 @@ img {
 .btn-registration {
   box-sizing: border-box;
   display: inline-block;
-  -background: #ffffff;
+  height: 45px;
+  background: #ffffff;
   color: #000000;
   font-size: 21px;
   padding: 0;
@@ -1209,6 +1210,7 @@ footer {
 
 .footer-bottom a:active {
   color: #ee3643;
+  text-decoration: none;
 }
 
 .footer-copyright
@@ -1228,8 +1230,8 @@ footer {
   text-decoration: none;
 }
 
-.footer-bottom a:hover,
-.footer-bottom a:active {
+.footer-social a:hover,
+.footer-social a:active {
   color: #ffffff;
   text-decoration: none;
   background: #ee3643;
