@@ -32,7 +32,6 @@ body {
   line-height: 140%;
   font-size: 13px;
   color: #000000;
-  background: url(../img/technomart-index.jpg) 50% 0 no-repeat;
   padding: 0;
   margin: 0;
 }
@@ -103,11 +102,13 @@ li {
 img {
   border: 0;
 }
-/* не понимаю, чем normalize.css лучше чем reset.css,
-все равно приходиться обнулять свойства */
+
+
 
 /******************************************************
-                         сетки
+
+                         СЕТКИ
+
 ******************************************************/
 
 /* общие */
@@ -160,6 +161,10 @@ img {
   padding-top: 59px;
 }
 
+.main-catalog {
+  min-height: 1631px;
+}
+
 .promo {
   min-height: 409px;  /* можно удалить после разметки внутренних блоков*/
 }
@@ -194,10 +199,26 @@ img {
   padding-top: 80px;
 }
 
+/* catalog */
+
+.products-sort-box  {
+  float: left;
+  min-width: 220px;
+}
+
+.products-class-box  {
+  float: right;
+  min-width: 700px;
+}
+
 
 
 /******************************************************
-          внутреннее расположение блоков
+
+          ВНУТРЕННЕЕ РАСПОЛОЖЕНИЕ БЛОКОВ
+
+                        Header
+
 ******************************************************/
 
 /* header - верхняя строка */
@@ -500,6 +521,43 @@ img {
 }
 
 
+/**************************************************
+
+        основное содержимое страницы
+
+**************************************************/
+
+/* хлебные крошки */
+
+.breadcrumb {
+}
+
+.breadcrumb li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 0;
+  margin-right: 34px;
+}
+
+.breadcrumb a {
+  position: relative;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+}
+
+.breadcrumb .icon-right:before {
+  position: absolute;
+  left: -30px;
+  top: 2px;
+  color: #d2d5db;
+}
+
+.breadcrumb .icon-home {
+  color: #d2d5db;
+}
 
 /* main - promo */
 
@@ -665,7 +723,13 @@ img {
   color: #ffffff;
 }
 
-/* main - popular */
+/* main - заголовки (popular) */
+
+.products-class-header h1 {
+  font-size: 30px;
+  padding-left: 10px;
+  letter-spacing: -0.04em;
+}
 
 .popular-top {
   margin-bottom: 21px;
@@ -684,6 +748,13 @@ img {
   width: 253px;
 }
 
+.products-class-header {
+  margin-bottom: 21px;
+  padding: 36px 28px;
+  -background: #f7f3ec;
+}
+
+/* карточки продуктов */
 
 .product-card {
   box-sizing: border-box;
@@ -704,8 +775,9 @@ img {
   box-shadow: 0 10px 25px 0 rgba(41,52,73,0.5);
 }
 
-.product-card:last-child {
-  float: right;
+
+.row-4n .product-card:nth-child(4n) {
+  /*float: right;*/
   margin-right: 0;
 }
 
@@ -828,6 +900,76 @@ img {
 
 .product-card:hover > .product-img {
   display: none;
+}
+
+/* каталог - фильтры */
+
+.bg-block {
+  background: #f7f3ec;
+  border-radius: 3px;
+}
+
+.products-sort-box {
+  font-family: "PT Sans", Verdana, sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.sort-header {
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  padding: 10px 20px;
+
+}
+
+.products-sort-box h4 {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: bold;
+  padding: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 14px;
+}
+
+.price-filter {
+  min-height: 207px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 6px;
+}
+
+.products-sort-box label {
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  margin-left: 34px;
+  margin-bottom: 20px;
+  outline: 1px solid red;
+}
+
+.products-filter {
+  border-bottom: 1px solid green;
+}
+
+.power-filter {
+  padding-top: 9px;
+}
+
+.products-filter-submit {
+  box-sizing: border-box;
+  width: 140px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 10px;
+  color: #000000;
+  border: 1px solid #e5e5e5;
+  background: transparent;
+  border-radius: 3px;
+  padding: 13px 38px;
+  letter-spacing: 0em;
+  margin-top: 56px;
 }
 
 
