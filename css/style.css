@@ -68,7 +68,8 @@ h1, h2, h3, h4 {
   background: #ba2732;
 }
 
-.new span.new-label {
+.new:after {
+  content: "new";
   position: absolute;
   display: table;
   font-size: 13px;
@@ -101,6 +102,8 @@ li {
 
 img {
   border: 0;
+  width: 100%;
+  height: auto;
 }
 
 
@@ -136,13 +139,13 @@ img {
 
 .header-bottom-part {
   padding-top: 46px;
-  min-height: 232px;
+  padding-bottom: 60px;
   background: #f1f5f7;
 }
 
 .header-center {
-
-  min-height: 90px;
+  padding-bottom: 18px;
+  outline: 1px solid red;
 }
 
 .nav-header-main {
@@ -163,10 +166,6 @@ img {
 
 .main-catalog {
   min-height: 1631px;
-}
-
-.promo {
-  min-height: 409px;  /* можно удалить после разметки внутренних блоков*/
 }
 
 .promo-left {
@@ -195,20 +194,21 @@ img {
 }
 
 .about {
-  min-height: 534px;  /* можно удалить после разметки внутренних блоков*/
+  /*min-height: 534px; */
   padding-top: 80px;
+  padding-bottom: 86px;
 }
 
 /* catalog */
 
 .products-sort-box  {
   float: left;
-  min-width: 220px;
+  width: 220px;
 }
 
 .products-class-box  {
   float: right;
-  min-width: 700px;
+  width: 700px;
 }
 
 
@@ -225,6 +225,7 @@ img {
 
 .header-main {
   /*background: #f2f6f8;*/
+  font-family: "Cuprum", Arial, sans-serif;
 }
 
 .logo-main,
@@ -250,12 +251,12 @@ img {
   display: block;
   font-size: 24px;
   width: 220px;
-  height: 42px;
+  height: 40px;
   background-color: #ee3643;
   color: #ffffff;
   text-transform: uppercase;
   font-size: 24px;
-/*  padding-top: 2px;*/
+  padding-top: 2px;
   box-shadow: 0 4px 0 0 #b52933;
 }
 
@@ -329,20 +330,34 @@ img {
 
 .header-order a {
   box-sizing: border-box;
+  position: relative;
   display: inline-block;
+  vertical-align: top;
   font-size: 17px;
   width: 150px;
-  height: 42px;
   text-align: center;
-  padding-right: 14px;
   padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 .header-order .icon-basket {
-  padding-right: 16px;
+  padding-left: 33px;
+  padding-right: 14px;
 }
 
-.header-order a:before  {
+.header-order .icon-bookmark {
+  padding-left: 31px;
+  padding-right: 14px;
+}
+
+/* псевдоэлементы ленточка и корзина*/
+.icon-basket:before,
+.icon-bookmark:before {
+  position: absolute;
+  display: block;
+  top: 12px;
+  left: 13px;
+  color: #ffffff;
   opacity: 0.3;
 }
 
@@ -358,16 +373,8 @@ img {
    opacity: 1;
 }
 
-.icon-bookmark:before {
-  padding-right: 8px;
-}
-
-.icon-basket:before {
-  padding-right: 12px;
-}
-
 .header-order a.btn-for-order-header {
-  padding: 0;
+
   background-color: #63a63e;
 }
 
@@ -435,13 +442,15 @@ img {
 .btn-enter,
 .btn-registration {
   box-sizing: border-box;
+  position: relative;
   display: inline-block;
-  height: 45px;
+  vertical-align: top;
   background: #ffffff;
   color: #000000;
   font-size: 21px;
   padding: 0;
-  padding-top: 11px;
+  padding-top: 13px;
+  padding-bottom: 14px;
   text-decoration: none;
   text-align: center;
 }
@@ -449,11 +458,13 @@ img {
 .btn-enter {
   width: 122px;
   margin-right: 5px;
-  padding-right: 20px;
+  padding-left: 19px;
 }
 
 .btn-enter:before {
-  padding-right: 8px;
+  position: absolute;
+  top: 12px;
+  left: 9px;
   color: #c5c5c5;
 }
 
@@ -489,22 +500,17 @@ img {
   text-align: center;
 }
 
-.nav-header-main ul {
-  display: inline-block;
-  vertical-align: top;
-}
-
 .nav-item a {
   box-sizing: border-box;
   display: block;
-  padding: 18px 30px;
+  padding: 20px 30.4px;
   padding-bottom: 17px;
   background: #32425c;
   border-bottom: 5px solid #293449;
   color: #ffffff;
   text-decoration: none;
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 17px;
+  line-height: 17px;
 }
 
 .nav-item a:hover {
@@ -517,11 +523,11 @@ img {
 }
 
 .nav-item:first-child a {
-  padding-left: 56px;
+  padding-left: 50px;
 }
 
 .nav-item:last-child a {
-  padding-right: 56px;
+  padding-right: 52px;
 }
 
 
@@ -531,54 +537,19 @@ img {
 
 **************************************************/
 
-/* хлебные крошки */
-
-.breadcrumb {
-}
-
-.breadcrumb li {
-  display: inline-block;
-  vertical-align: top;
-  padding: 20px 0;
-  margin-right: 34px;
-}
-
-.breadcrumb a {
-  position: relative;
-  font-size: 13px;
-  line-height: 18px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #000000;
-}
-
-.breadcrumb .icon-right:before {
-  position: absolute;
-  left: -30px;
-  top: 2px;
-  color: #d2d5db;
-}
-
-.breadcrumb .icon-home {
-  color: #d2d5db;
-}
-
 /* main - promo */
 
 .section-card {
   box-sizing: border-box;
   position: relative;
   width: 300px;
-  height: 123px;
+  /*min-height: 123px;*/
   padding: 27px 22px;
+  padding-bottom: 22px;
   margin-bottom: 20px;
   font-family: "Cuprum", Arial, sans-serif;
   color: #ffffff;
   overflow: hidden;
-}
-
-.section-card .new-label {
-  display: none;
 }
 
 .card-name {
@@ -683,6 +654,7 @@ img {
   width: 100px;
   height: 58px;
   top: 105px;
+  outline: 1px solid red;
 }
 
 .promo-label-right {
@@ -745,7 +717,7 @@ img {
 .popular-top h2 {
   font-size: 30px;
   float: left;
-  min-width: 20px;
+  min-width: 550px;
   padding-top: 10px;
 }
 
@@ -767,11 +739,13 @@ img {
   position: relative;
   float: left;
   display: block;
+  text-align: center;
   vertical-align: top;
   width: 219px;
-  min-height: 318px;
+  /*min-height: 318px;*/
   margin-right: 21px;
   padding-top: 180px;
+  padding-bottom: 10px;
   border: 1px solid #e5e5e5;
   overflow: hidden;
   background: #ffffff;
@@ -781,16 +755,17 @@ img {
   box-shadow: 0 10px 25px 0 rgba(41,52,73,0.5);
 }
 
-
 .row-4n .product-card:nth-child(4n) {
   /*float: right;*/
   margin-right: 0;
 }
 
-.product-card .product-name,
-.product-old-price {
+.product-name,
+.product-old-price,
+.product-new-price
+ {
   position: relative;
-  display: block;
+  display: inline-block;
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -803,6 +778,7 @@ img {
 .product-old-price {
   font-size: 17px;
   line-height: 18px;
+  min-height: 13px;
   color: #999999;
   text-decoration: line-through;
 }
@@ -810,30 +786,32 @@ img {
 .product-new-price,
 .product-new-price:hover,
 .product-new-price:active {
-  position: absolute;
-  bottom: 20px;
-  left: 42px;
-  width: 122px;
+  position: relative;
+  right:7px;
+  display: inline-block;
+  width: auto;
+  min-width: 70px;
+  max-width: 180px;
+  padding: 10px;
+  padding-left: 33px;
+  padding-right: 18px;
   font-size: 17px;
   line-height: 18px;
-  letter-spacing: 0.08em;
   font-weight: bold;
-  padding-left: 20px;
   background: #ee3643;
+  color: #ffffff;
+  border-radius: 3px 0 0 3px;
+  text-decoration: none;
 }
 
 .product-new-price:after {
   content: "";
   position: absolute;
-  right: -19px;
+  right: -19.5px;
   top: 0;
   border: 19px solid transparent;
   border-left: 19px solid #ee3643;
   border-right: none;
-}
-
-.product-card .new-label {
-  display: none;
 }
 
 .btns-card {
@@ -908,85 +886,6 @@ img {
   display: none;
 }
 
-/* каталог - фильтры */
-
-.bg-block {
-  background: #f7f3ec;
-  border-radius: 3px;
-}
-
-.products-sort-box {
-  font-family: "PT Sans", Verdana, sans-serif;
-  color: #000000;
-  text-transform: uppercase;
-}
-
-.sort-header {
-  display: block;
-  font-size: 13px;
-  line-height: 18px;
-  padding: 10px 20px;
-}
-
-.products-sort-box h4 {
-  font-size: 17px;
-  line-height: 30px;
-  font-weight: bold;
-  padding: 10px 0;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding-bottom: 14px;
-}
-
-.price-filter {
-  min-height: 207px;
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 6px;
-}
-
-.products-sort-box label {
-  display: block;
-  font-size: 15px;
-  line-height: 20px;
-  margin-left: 34px;
-  margin-bottom: 20px;
-  outline: 1px solid red;
-}
-
-.products-filter {
-  border-bottom: 1px solid #e5e5e5;
-  background: rgba(200,100,100,0.3);
-}
-
-.power-filter {
-  padding-top: 9px;
-}
-
-.power-filter label {
-    font-size: 14px;
-    margin-top: -2px;
-    margin-bottom: 22px;
-}
-
-.products-filter-submit {
-  box-sizing: border-box;
-  width: 140px;
-  height: 38px;
-  cursor: pointer;
-  font-size: 13px;
-  line-height: 10px;
-  text-transform: uppercase;
-  color: red;
-  border: 1px solid #e5e5e5;
-  background: transparent;
-  border-radius: 3px;
-  padding: 13px 38px;
-  padding-top: 15px;
-  letter-spacing: 0em;
-  margin-top: 56px;
-}
-
-
 /* main - brands */
 
 .brand-card {
@@ -1000,7 +899,7 @@ img {
   margin-bottom: 20px;
   margin-right: 16px;
   background: #ffffff;
-  border: 1px solid #cccccc;
+  border: 1px solid #e5e5e5;
   text-align: center;
   line-height: 140px;
 }
@@ -1053,7 +952,7 @@ img {
   display: block;
   left: -235px;
   padding-left: 23px;
-  width: 235px;
+  width: 240px;
   height: 61px;
   border-top: 1px solid #405069;
   border-bottom: 1px solid #293449;
@@ -1104,7 +1003,7 @@ img {
   width: 50px;
   height: 280px;
   top: -50px;
-  left: 0;
+  left: 4px;
   background: #f2f6f8;
   z-index: 60;
 }
@@ -1116,7 +1015,7 @@ img {
   width: 20px;
   height: 260px;
   top: -40px;
-  left: 0;
+  left: 4px;
   border-radius: 50%;
   z-index: 50;
   box-shadow: 3px 0 20px 0 #000000;
@@ -1272,7 +1171,7 @@ footer {
 
 .footer-top-company {
   float: left;
-  min-width: 340px;
+  width: 340px;
 }
 
 .footer-contact {
@@ -1305,7 +1204,7 @@ footer {
 .footer-top-nav {
   font-size: 18px;
   float: right;
-  min-width: 560px;
+  width: 560px;
 }
 
 .nav-footer-top,
@@ -1372,12 +1271,12 @@ footer {
 .footer-copyright
 {
   float: left;
-  min-width: 240px;
+  width: 240px;
 }
 
 .footer-social {
   float: left;
-  min-width: 100px;
+  width: 100px;
   margin-left: 149px;
 }
 
@@ -1407,17 +1306,17 @@ footer {
 
 .footer-mail-and-copyright {
   float: right;
-  min-width: 300px;
+  width: 300px;
 }
 
 .footer-mail {
   float: left;
-  min-width: 160px;
+  width: 160px;
 }
 
 .footer-copyright-studio {
   float: right;
-  min-width: 110px;
+  width: 110px;
 }
 
 
@@ -1527,4 +1426,120 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
 .icon-instagramm::before { content: "📷"; } /* "\1f4f7" */
 .icon-search::before { content: "🔍"; } /* "\1f50d" */
 .icon-bookmark::before { content: "🔖"; } /* "\1f516" */
-*/*/
+
+
+/***********************************************************/
+/*                  Каталог                                */
+/***********************************************************/
+
+/* хлебные крошки */
+
+.breadcrumb {
+}
+
+.breadcrumb li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 0;
+  margin-right: 34px;
+}
+
+.breadcrumb a {
+  position: relative;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+}
+
+.breadcrumb .icon-right:before {
+  position: absolute;
+  left: -30px;
+  top: 2px;
+  color: #d2d5db;
+}
+
+.breadcrumb .icon-home {
+  color: #d2d5db;
+}
+
+
+/* каталог - фильтры */
+
+.bg-block {
+  background: #f7f3ec;
+  border-radius: 3px;
+}
+
+.products-sort-box {
+  font-family: "PT Sans", Verdana, sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.sort-header {
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  padding: 10px 20px;
+}
+
+.products-sort-box h4 {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: bold;
+  padding: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 14px;
+}
+
+.price-filter {
+  min-height: 207px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 6px;
+}
+
+.products-sort-box label {
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  margin-left: 34px;
+  margin-bottom: 20px;
+  outline: 1px solid red;
+}
+
+.products-filter {
+  border-bottom: 1px solid #e5e5e5;
+/*  background: rgba(200,100,100,0.3);*/
+}
+
+.power-filter {
+  padding-top: 9px;
+}
+
+.power-filter label {
+    font-size: 14px;
+    margin-top: -2px;
+    margin-bottom: 22px;
+}
+
+.products-filter-submit {
+  box-sizing: border-box;
+  width: 140px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 10px;
+  text-transform: uppercase;
+  color: #000000;
+  border: 1px solid #e5e5e5;
+  background: transparent;
+  border-radius: 3px;
+  padding: 13px 38px;
+  padding-top: 15px;
+  letter-spacing: 0em;
+  margin-top: 56px;
+}
+
