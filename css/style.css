@@ -25,6 +25,24 @@ body > *, body > * > *, body > * > * >*, body > * > * >* > * {
        url("../fonts/symbols-technomart.woff2") format("woff2");
 }
 
+/* reset */
+
+div, nav, section,
+p, ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+
 /* общие */
 
 body {
@@ -46,9 +64,16 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
+h2 {
+  font-size: 40px;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
 .btn {
   box-sizing: border-box;
-  display: table;
+  display: block;
+  min-width: 20px;
   padding: 10px;
   background: #ee3643;
   border-radius: 3px;
@@ -80,32 +105,6 @@ h1, h2, h3, h4 {
   background-color: #ee3643;
   transform: rotate(45deg);
 }
-
-h2 {
-  font-size: 40px;
-  font-weight: normal;
-  letter-spacing: 0;
-}
-
-/* reset */
-
-div, nav, section,
-p, ul,
-h1, h2, h3, h4 {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style: none;
-}
-
-img {
-  border: 0;
-  width: 100%;
-  height: auto;
-}
-
 
 
 /******************************************************
@@ -145,7 +144,6 @@ img {
 
 .header-center {
   padding-bottom: 18px;
-  outline: 1px solid red;
 }
 
 .nav-header-main {
@@ -184,10 +182,10 @@ img {
 
 .popular-brands {
   margin-top: 21px;
+  margin-bottom: 64px;
 }
 
 .service {
- margin-top: 64px;
  padding-top: 70px;
  padding-bottom: 102px;
  background: #f2f6f8;
@@ -195,7 +193,7 @@ img {
 
 .about {
   /*min-height: 534px; */
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 86px;
 }
 
@@ -396,6 +394,8 @@ img {
 .header-tagline {
   float: left;
   width: 220px;
+  margin: 0;
+  padding: 0;
   padding-top: 3px;
   margin-left: 51px;
   font-style: italic;
@@ -561,7 +561,7 @@ img {
   width: 135px;
   margin-top: 15px;
   padding: 10px;
-  margin-left: 2px;
+/*  margin-left: 2px;*/
   background: rgba(0,0,0,0.1);
 }
 
@@ -654,7 +654,6 @@ img {
   width: 100px;
   height: 58px;
   top: 105px;
-  outline: 1px solid red;
 }
 
 .promo-label-right {
@@ -709,16 +708,16 @@ img {
 }
 
 .popular-top {
-  margin-bottom: 21px;
+  margin-bottom: 20px;
   padding: 25px 25px;
   background: #f7f3ec;
 }
 
 .popular-top h2 {
-  font-size: 30px;
   float: left;
   min-width: 550px;
-  padding-top: 10px;
+  font-size: 30px;
+  line-height: 130%;
 }
 
 .btn-more {
@@ -889,15 +888,16 @@ img {
 /* main - brands */
 
 .brand-card {
+  font-size: 0;
 }
 
 .brand-link {
   display: inline-block;
   vertical-align: top;
   width: 218px;
-  height: 144px;
+  min-height: 144px;
   margin-bottom: 20px;
-  margin-right: 16px;
+  margin-right: 20px;
   background: #ffffff;
   border: 1px solid #e5e5e5;
   text-align: center;
@@ -963,6 +963,7 @@ img {
   vertical-align: middle;
   font-size: 21px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .service-label:hover {
@@ -1084,8 +1085,7 @@ img {
 .about-index h2,
 .contact-index h2 {
   font-size: 30px;
-  padding-top: 2px;
-  margin-bottom: 32px;
+  padding: 32px 0;
 }
 
 .about-index p,
@@ -1150,19 +1150,18 @@ footer {
 }
 
 .footer-top {
-  font-size: 18px;
-  line-height: 24px;
   background: #32425c;
+  font-size: 16px;
+  line-height: 18px;
 }
 
-.logo-footer a {
-  display: inline-block;
+.logo-footer {
+  display: block;
   width: 220px;
-  height: 45px;
   font-size: 30px;
-  line-height: 30px;
+  line-height: 15px;
   text-align: center;
-  padding-top: 18px;
+  padding: 24px 0;
   background-color: #ee3643;
   color: #ffffff;
   text-transform: uppercase;
@@ -1171,10 +1170,12 @@ footer {
 
 .footer-top-company {
   float: left;
-  width: 340px;
+  width: 326px;
+  padding-bottom: 50px;
 }
 
 .footer-contact {
+  margin-top: 32px;
   width: auto;
   clear: both;
 }
@@ -1185,66 +1186,37 @@ footer {
   margin-left: 3px;
 }
 
-.logo-footer,
-.nav-footer-top {
-  min-height: 96px;
-}
-
-.nav-footer-bottom {
-  min-height: 96px;
-}
-
-.footer-top {
-  font-size: 16px;
-  line-height: 18px;
-}
-
 /* footer - навигация */
 
-.footer-top-nav {
-  font-size: 18px;
+.footer-nav {
   float: right;
-  width: 560px;
-}
-
-.nav-footer-top,
-.nav-footer-bottom {
+  width: 610px;
   text-align: right;
-}
-
-.nav-footer-top a:hover,
-.nav-footer-bottom a:hover {
-  text-decoration: underline;
-}
-
-.nav-footer-top a:active,
-.nav-footer-bottom a:active {
-  opacity: 0.3;
-}
-
-.nav-footer-top li{
-  margin-top: 40px;
-}
-
-.nav-footer-bottom li{
-  margin-top: 2px;
-}
-
-.nav-footer-bottom a {
+  padding-top: 21px;
+  font-size: 0px;
   color: #ffd180;
 }
 
-.nav-footer-top li,
-.nav-footer-bottom li {
-  display: inline-block;
-  text-align: right;
-  margin-left: 54px;
+.footer-nav:first-line {
+  color: #ffffff;
 }
 
-.nav-footer-top li:first-child,
-.nav-footer-bottom li:first-child {
-  margin-left: 0;
+.footer-nav a {
+  text-align: right;
+  font-size: 18px;
+  margin-left: 59px;
+  line-height: 58px;
+  color: inherit;
 }
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-nav a:active {
+  opacity: 0.3;
+}
+
 
 /* footer - нижняя часть */
 
@@ -1276,8 +1248,9 @@ footer {
 
 .footer-social {
   float: left;
-  width: 100px;
-  margin-left: 149px;
+  width: 200px;
+  margin-left: 148px;
+  margin-top: -2px;
 }
 
 .footer-social a {
@@ -1292,11 +1265,10 @@ footer {
   background: #ee3643;
 }
 
-
 .social-btn {
   display: inline-block;
   width: 42px;
-  height: 31px;
+  height: 30px;
   border-radius: 50%;
   background: #212a3a;
   font-size: 18px;
@@ -1317,6 +1289,10 @@ footer {
 .footer-copyright-studio {
   float: right;
   width: 110px;
+}
+
+.footer-copyright-studio span {
+  display: block;
 }
 
 
@@ -1507,7 +1483,6 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
   line-height: 20px;
   margin-left: 34px;
   margin-bottom: 20px;
-  outline: 1px solid red;
 }
 
 .products-filter {
