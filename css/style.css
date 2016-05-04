@@ -162,10 +162,6 @@ h2 {
   padding-top: 59px;
 }
 
-.main-catalog {
-  min-height: 1631px;
-}
-
 .promo-left {
   float: left;
   width: 620px;
@@ -1408,6 +1404,17 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
 /*                  Каталог                                */
 /***********************************************************/
 
+/* хеадер */
+
+a.active {
+  background: #ee3643;
+}
+
+.main-catalog {
+  /*min-height: 1631px;*/
+}
+
+
 /* хлебные крошки */
 
 .breadcrumb {
@@ -1439,7 +1446,6 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
 .breadcrumb .icon-home {
   color: #d2d5db;
 }
-
 
 /* каталог - фильтры */
 
@@ -1518,3 +1524,21 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
   margin-top: 56px;
 }
 
+/* additional */
+
+.additional {
+ padding-top: 0px;
+ background: #f2f6f8;
+}
+
+.additional div {
+  margin-bottom: 0px;
+}
+.additional h2 {
+  font-size: 30px;
+  margin-bottom: 32px;
+}
+
+.additional p {
+  line-height: 24px;
+}
