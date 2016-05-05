@@ -432,7 +432,7 @@ h2 {
   float: right;
   width: 300px;
   min-height: 20px;
-  text-align: right;
+  font-size: 0;
 }
 
 .btn-enter,
@@ -484,6 +484,64 @@ h2 {
   color: #c5c5c5;
 }
 
+.btn-login {
+  position: relative;
+  display: block;
+  padding: 13px 0;
+  padding-left: 48px;
+  text-align: left;
+  background: #ffffff;
+  color: #000000;
+  font-size: 21px;
+  text-decoration: none;
+}
+
+.btn-login.icon-user:before,
+.btn-login.icon-logout:after {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 13px;
+  font-family: "symbols-technomart";
+  color: #c5c5c5;
+}
+
+.btn-login.icon-user:before {
+  left: 11px;
+  font-size: 18px;
+}
+
+.icon-logout:after {
+  content: "\241b";
+  right: 9px;
+  font-size: 22px;
+}
+
+.my-orders,
+.my-account {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 18px;
+  color: #32425c;
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 0;
+  padding-left: 19px;
+  padding-right: 13px;
+}
+
+.my-orders:before {
+  content: "●";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 8px;
+  right: -21px;
+  font-size: 10px;
+  color: #32425c;
+}
 
 /* header - навигация */
 
@@ -499,7 +557,7 @@ h2 {
 .nav-item a {
   box-sizing: border-box;
   display: block;
-  padding: 20px 30.4px;
+  padding: 20px 30.7px;
   padding-bottom: 17px;
   background: #32425c;
   border-bottom: 5px solid #293449;
@@ -697,9 +755,15 @@ h2 {
 
 /* main - заголовки (popular) */
 
+.products-class-header {
+  width: 940px;
+  margin-bottom: 21px;
+  padding: 36px 28px;
+  background: #f2f6f8;
+}
+
 .products-class-header h1 {
   font-size: 30px;
-  padding-left: 10px;
   letter-spacing: -0.04em;
 }
 
@@ -719,12 +783,6 @@ h2 {
 .btn-more {
   float: right;
   width: 253px;
-}
-
-.products-class-header {
-  margin-bottom: 21px;
-  padding: 36px 28px;
-  background: #f7f3ec;
 }
 
 /* карточки продуктов */
@@ -1291,7 +1349,139 @@ footer {
   display: block;
 }
 
+/* карта */
 
+.popup {
+  box-sizing: border-box;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 16px 8px rgba(0,0,0,0.5);
+  z-index: 80;
+}
+
+
+.bigmap {
+  width: 941px;
+  height: 447px;
+  margin-bottom: 50px;
+}
+
+.popup-close {
+  position: absolute;
+  display: block;
+  width: 28px;
+  height: 28px;
+  top: 10px;
+  right: 10px;
+  border-radius: 2px;
+  z-index: 90;
+}
+
+.map-close {
+  background: #f7f1d9;
+}
+
+.popup-close:before,
+.popup-close:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: #ee3643;
+  z-index: 100;
+  top: 11px;
+  right: -1px;
+  border-radius: 1px;
+}
+
+.popup-close:before {
+  transform: rotate(45deg);
+}
+
+.popup-close:after {
+  transform: rotate(-45deg);
+}
+
+.write-us {
+  width: 620px;
+  height: 430px;
+  background: #ffffff;
+  border-top: 8px solid #ee3643;
+}
+
+.write-top {
+  box-sizing: border-box;
+  height: 312px;
+  padding: 40px 80px;
+  padding-bottom: 0;
+}
+
+.write-top > div {
+  padding-bottom: 6px;
+}
+
+.write-top input,
+.write-top textarea {
+  box-sizing: border-box;
+  display: block;
+  padding: 8px 14px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #999999;
+  background: transparent;
+  border: 2px solid #d7dcde;
+  border-radius: 3px;
+  outline: none;
+}
+
+.write-top input {
+  width: 220px;
+}
+
+.write-top textarea {
+  resize: none;
+}
+
+.write-top label {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 8px;
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.write-name {
+  float: left;
+  width: 220px;
+}
+
+.write-email {
+  float: right;
+  width: 220px;
+}
+
+.write-top textarea {
+  width: 100%;
+  height: 115px;
+}
+
+.write-bottom {
+  padding: 37px 80px;
+  background: #f1f1f1;
+}
+
+.write-bottom .btn {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+}
 
 /******************************************************
                       графика
@@ -1349,6 +1539,9 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
   background: #f2f6f8 url(../img/credite24.png) 80px 0 no-repeat;
 }
 
+.bigmap {
+  background: #fffff0 url(../img/map-big2.jpg) 0 0 no-repeat;
+}
 
 /******************************************************
                      иконочный шрифт
