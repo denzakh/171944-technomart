@@ -78,15 +78,20 @@
         <div class="products-sort-box"> <!-- левый блок фильтров -->
           <form action="#" name="products-sort">
             <span class="sort-header bg-block">Фильтр</span>
-            <div class="price-filter outline">
-              <h4 class="outline">Цена:</h4>
-              <!--
+            <div class="price-filter">
+              <h4 class="">Цена:</h4>
+              <div class="range-box">
+                <div class="strip">
+                  <span class="strip-active"></span>
+                  <span class="controller controller-min"></span>
+                  <span class="controller controller-max"></span>
+                </div>
+              </div>
+              <div class="price-indicators clear">
+                <input type="numbers" name="price-min" class="price-min" value="0">
+                <input type="numbers" name="price-max" class="price-max" value="30000">
+              </div>
 
-
-              Добавить двойной ползунок
-
-
-              -->
             </div>
             <div class="products-filter">
               <h4>Производители:</h4>
