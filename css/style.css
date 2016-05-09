@@ -41,6 +41,7 @@ img {
   border: 0;
   width: 100%;
   height: auto;
+  line-height: 0;
 }
 
 /* общие */
@@ -433,6 +434,7 @@ h2 {
   width: 300px;
   min-height: 20px;
   font-size: 0;
+  text-align: right;
 }
 
 .btn-enter,
@@ -453,7 +455,7 @@ h2 {
 
 .btn-enter {
   width: 122px;
-  margin-right: 5px;
+  margin-right: 10px;
   padding-left: 19px;
 }
 
@@ -787,71 +789,62 @@ h2 {
 
 /* карточки продуктов */
 
+.product-cards {
+  margin-left: -21px;
+  font-size: 0;
+}
+
 .product-card {
   box-sizing: border-box;
   position: relative;
-  float: left;
   width: 219px;
   min-height: 318px;
-  display: block;
-  text-align: center;
+  display: inline-block;
   vertical-align: top;
+  text-align: center;
   border: 1px solid #e5e5e5;
   overflow: hidden;
   background: #ffffff;
-  padding-top: 180px;
-  padding-bottom: 10px;
-  margin-right: 21px;
+  margin-left: 21px;
   margin-bottom: 21px;
 }
 
-.product-card:hover {
-  box-shadow: 0 10px 25px 0 rgba(41,52,73,0.5);
-}
-
-.row-4n .product-card:nth-child(4n) {
-  /*float: right;*/
-  margin-right: 0;
-}
-
-.product-name,
-.product-old-price,
-.product-new-price
- {
+.product-card > * {
   position: relative;
-  display: inline-block;
-  width: 100%;
+  display: block;
+  width: auto;
   text-align: center;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 17px;
+  line-height: 18px;
   font-weight: bold;
   word-wrap: break-word;
-  margin-bottom: 10px;
+  -outline: 1px solid red;
+}
+
+.product-img-box {
+    overflow: hidden;
+}
+
+.product-name {
+  min-height: 40px;
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 26px;
+  margin-bottom: 11px;
+  padding: 0 25px;
 }
 
 .product-old-price {
-  font-size: 17px;
-  line-height: 18px;
-  min-height: 13px;
+  min-height: 20px;
   color: #999999;
   text-decoration: line-through;
 }
 
-.product-new-price,
-.product-new-price:hover,
-.product-new-price:active {
+.product-new-price {
   position: relative;
-  right:7px;
-  display: inline-block;
-  width: auto;
-  min-width: 70px;
-  max-width: 180px;
-  padding: 10px;
-  padding-left: 33px;
-  padding-right: 18px;
-  font-size: 17px;
-  line-height: 18px;
-  font-weight: bold;
+  width: 80px;
+  margin: 8px auto;
+  padding: 10px 28px;
   background: #ee3643;
   color: #ffffff;
   border-radius: 3px 0 0 3px;
@@ -861,19 +854,25 @@ h2 {
 .product-new-price:after {
   content: "";
   position: absolute;
-  right: -19.5px;
+  right: -5px;
   top: 0;
-  border: 19px solid transparent;
+  border: 19px solid #ffffff;
   border-left: 19px solid #ee3643;
   border-right: none;
 }
 
+
+
 .btns-card {
   display: none;
   position: absolute;
-  top: 43px;
+  min-height: 135px;
+  padding-top: 43px;
   width: 100%;
   text-align: center;
+  background: #ffffff;
+  z-index: 10;
+  outline: 1px solid red;
 }
 
 .btn-card-bookmarks,
@@ -931,14 +930,15 @@ h2 {
   color: #c1c6ce;
 }
 
+.product-card:hover {
+  box-shadow: 0 10px 25px 0 rgba(41,52,73,0.5);
+}
+
 .product-card:hover > .btns-card {
   display: block;
   background-color: #ffffff;
 }
 
-.product-card:hover > .product-img {
-  display: none;
-}
 
 /* main - brands */
 
@@ -1517,17 +1517,6 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
   background: #59493a url(../img/slider-2.jpg) 0 0 no-repeat;
 }
 
-.product-card img {
-    position: absolute;
-    top:0;
-    left: auto; right: auto;
-    z-index: 0;
-}
-
-.product-card img:hover {
-  display: none;
-}
-
 #service-1:checked + .service-main:after {
   background: #f2f6f8 url(../img/delivery24.png) 50px 24px no-repeat;
 }
@@ -1720,11 +1709,12 @@ a.active {
   height: 2px;
   top: 0;
   left: 10px;  /* мин значение индикатора */
-  width: 130px;  /* ширина индикатора(макс - мин координаты) */
+  width: 130px;  /* ширина индикатора(макс минус мин координаты) */
 }
 
 .price-indicators {
   padding-top: 9px;
+  position: relative;
 }
 
 .price-indicators input {
@@ -1741,10 +1731,21 @@ a.active {
 
 .price-min {
   float: left;
+  position: relative;
 }
 
 .price-max {
   float: right;
+}
+
+.price-indicators:before {
+  content: "\2014";
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 47%;
+  z-index: 50;
+  font-size: 17px;
 }
 
 /* фильтр производителей */
@@ -1898,12 +1899,8 @@ input:disabled + label:hover:before {
 
 
 
-/*card-products*/
+/*card-*/
 
-.row-3n .product-card:nth-child(3n) {
-  /*float: right;*/
-  margin-right: 0;
-}
 
 /* pages */
 
