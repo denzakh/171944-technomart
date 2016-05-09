@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>HTML Academy: Техномарт</title>
   </head>
-  <body style="background: url(img/technomart-index.jpg) 50% 0 no-repeat;">
+  <body class="">
     <header class="header-main">
       <div class="header-top-menu">
         <div class="container clear">
@@ -264,44 +264,48 @@
         <div class="contact-index">
           <h2>Контакты</h2>
           <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-          <a href="" class="map-small"><img src="img/map-small.jpg" width="300" heigh="158" alt="" class="map-small"></a>
+          <a href="img/map-big.jpg" target="_blank" class="map-small"><img src="img/map-small.jpg" width="300" heigh="158" alt="" class="map-small"></a>
 
           <a href="" class="btn btn-contact">Заблудились? Напишите нам!</a>
         </div>
       </section>
 
+    </main>
+
+    <aside class="popups">
+
       <div class="bigmap popup hidden">
         <a href="" class="map-close popup-close" id="map-close"></a>
         <div id="ymapsid"></div>
       </div>
-
-      <form class="write-us popup hidden" >
+    <div class="modal-popup hidden">
+      <form action="write-us.php"  method="get" class="write-us popup">
         <a href="" class="popup-close" id="write-us-close"></a>
         <div class="write-top">
           <div class="clear">
             <div class="write-name">
               <label for="write-name-id">Ваше имя:</label>
-              <input type="text" name="" id="write-name-id" placeholder="Представьтесь, пожалуйста">
+              <input type="text" name="name" id="write-name-id" placeholder="Представьтесь, пожалуйста" requared>
             </div>
             <div class="write-email">
               <label for="write-email-id">Ваш e-mail:</label>
-              <input type="pasword" name="" id="write-email-id" placeholder="Для отправки ответа">
+              <input type="pasword" name="email" id="write-email-id" placeholder="Для отправки ответа" requared>
             </div>
           </div>
           <div>
             <label>Текст письма:</label>
-            <textarea name="write-text" id="" placeholder="В свободной форме"></textarea>
+            <textarea name="write-text" id="" placeholder="В свободной форме" name="text" requared></textarea>
           </div>
-
 
         </div>
         <div class="write-bottom">
-          <input type="submit" class="btn" value="Отправить">
+          <input type="submit" name="submit" class="btn" value="Отправить">
         </div>
 
       </form>
+    </div>
 
-    </main>
+    </aside>
 
     <footer class="footer-main">
       <div class="footer-top">
@@ -355,6 +359,52 @@
     </footer>
 
 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=l-Jh70ey3cYus7_o6XXwT9mgWRhHiwI1&width=941&height=447&lang=ru_RU&sourceType=constructor&scroll=true&id=ymapsid"></script>
+
+<script  type="text/javascript" charset="utf-8">
+  // переменные модального окна
+  var v_body = document.querySelector("body");
+  var modal_popup = document.querySelector(".modal-popup");
+  var btn_contact = document.querySelector(".btn-contact");
+  var form_close = modal_popup.querySelector("#write-us-close");
+
+  // переменные формы
+  var form = modal_popup.querySelector("form");
+  var inp_name = modal_popup.querySelector("[name=name]");
+  var inp_email = modal_popup.querySelector("[name=email]");
+  var textarea = modal_popup.querySelector("[name=text]");
+  var btn_submit = modal_popup.querySelector("[name=submit]");
+
+  // открываем форму
+  btn_contact.addEventListener("click", function(event) {
+    event.preventDefault(); // отменяем действие ссылки
+    v_body.classList.add("blured"); // добавляем фильтры к body
+    modal_popup.classList.remove("hidden"); // удаляем класс hidden у модального окна
+    inp_name.focus();
+      });
+
+  // закрываем форму
+  form_close.addEventListener("click", function(event) {
+    event.preventDefault(); // отменяем действие ссылки
+    v_body.classList.remove("blured"); // удаляем фильтры у body
+    modal_popup.classList.add("hidden"); // добавляем класс hidden у модального окна
+      });
+
+//карта
+  var btn_map = document.querySelector(".map-small");
+  var bigmap = document.querySelector(".bigmap");
+  var map_close = document.getElementById("map-close")
+
+  // открываем карту
+  btn_map.addEventListener("click", function(event) {
+    event.preventDefault(); // отменяем действие ссылки
+    bigmap.classList.remove("hidden"); // удаляем класс hidden у карты
+  });
+  map_close.addEventListener("click", function(event) {
+    event.preventDefault(); // отменяем действие ссылки
+    bigmap.classList.add("hidden"); // добавляем класс hidden у карты
+  });
+
+</script>
 
   </body>
 </html>
