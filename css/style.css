@@ -1367,6 +1367,17 @@ footer {
   border-color: #ee2222;
 }
 
+.modal-popup {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background: url(../img/popup2.png) 400px 400px repeat;
+}
+
+
 .popup {
   box-sizing: border-box;
   position: fixed;
@@ -1412,6 +1423,11 @@ footer {
   top: 11px;
   right: -1px;
   border-radius: 1px;
+}
+
+.popup-close:hover:before,
+.popup-close:hover:after {
+  background: #dd2222;
 }
 
 .popup-close:before {
