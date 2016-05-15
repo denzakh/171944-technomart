@@ -502,7 +502,6 @@ h2 {
   font-size: 21px;
   line-height: 18px;
   text-decoration: none;
-  outline: 1px solid red;
 }
 
 .btn-login.icon-user:before,
@@ -512,6 +511,17 @@ h2 {
   height: 20px;
   top: 13px;
   font-family: "symbols-technomart";
+  color: #c5c5c5;
+}
+
+.btn-login.icon-user:hover:before,
+.btn-login.icon-logout:hover:after {
+  color: #32425c;
+}
+
+.btn-login.icon-user:active,
+.btn-login.icon-user:active:before,
+.btn-login.icon-logout:active:after {
   color: #c5c5c5;
 }
 
@@ -526,8 +536,11 @@ h2 {
   font-size: 22px;
 }
 
-.my-orders,
-.my-account {
+.login-additional {
+  text-align: left;
+}
+
+.login-additional a {   /*.my-orders, .my-account */
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -539,11 +552,14 @@ h2 {
   padding-bottom: 0;
   padding-left: 19px;
   padding-right: 13px;
-  outline: 1px solid red;
 }
 
-.login-additional {
-  text-align: left;
+.login-additional a:hover {
+  color: #ee3643;
+}
+
+.login-additional a:active {
+  color: #c5c5c5;
 }
 
 .my-orders:before {
@@ -1246,6 +1262,7 @@ footer p {
   background: #32425c;
   font-size: 16px;
   line-height: 18px;
+  padding-bottom: 50px;
 }
 
 .logo-footer {
@@ -1264,7 +1281,6 @@ footer p {
 .footer-top-company {
   float: left;
   width: 326px;
-  padding-bottom: 50px;
 }
 
 .footer-contact {
@@ -1359,6 +1375,7 @@ footer p {
 
 .social-btn {
   display: inline-block;
+  vertical-align: top;
   width: 42px;
   height: 30px;
   border-radius: 50%;
@@ -1925,15 +1942,6 @@ input:disabled + label:hover:before {
   color: #c6c2bd;
 }
 
-.sort-toolbar .by-active {
-  color: #ee3643;
-}
-
-.sort-by {
-outline: 1px solid red;
-
-}
-
 .sort-header {
   float: left;
   padding: 0;
@@ -1955,10 +1963,6 @@ outline: 1px solid red;
   border-bottom: 1px dotted #ee3643;
 }
 
-.sort-main .by-active {
-  border-bottom: none;
-}
-
 .sort-direction {
   float: right;
   min-width: 68px;
@@ -1972,7 +1976,19 @@ outline: 1px solid red;
   margin-right: 7px;
 }
 
+.sort-main a:hover {
+  color: #000000;
+  border-bottom: 1px solid #ee3643;
+}
 
+.sort-direction a:hover {
+  color: #000000;
+}
+
+.sort-toolbar .by-active {
+  color: #ee3643;
+  border-bottom: none;
+}
 
 /*card-*/
 
