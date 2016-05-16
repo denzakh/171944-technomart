@@ -1148,6 +1148,7 @@ img
   border: 19px solid #ffffff;
   border-right: none;
   border-left: 19px solid #ee3643;
+  box-shadow: 0 5px 0 0 #ffffff;
 }
 
 .btns-card
