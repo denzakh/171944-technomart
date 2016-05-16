@@ -1,18 +1,7 @@
-/*/*
-/******************************************************
-              Общие установки и подсветка
-******************************************************/
 
-/* подсветка */
-/*
-body > *, body > * > *, body > * > * >*, body > * > * >* > * {
-  background: rgba(200,200,10,0.2);
-}
-*/
-.outline {
-  /*background: rgba(200,100,10,0.2);*/
-  outline: 1px solid red;
-}
+/******************************************************
+                       Общие
+******************************************************/
 
 /* подключение иконочного шрифта */
 
@@ -24,21 +13,6 @@ body > *, body > * > *, body > * > * >*, body > * > * >* > * {
   src: url("../fonts/symbols-technomart.woff") format("woff"),
        url("../fonts/symbols-technomart.woff2") format("woff2");
 }
-
-/* reset */
-
-li {
-  list-style: none;
-}
-
-img {
-  border: 0;
-  width: 100%;
-  height: auto;
-  line-height: 0;
-}
-
-/* общие */
 
 body {
   font-family: "PT Sans", Verdana, sans-serif;
@@ -63,6 +37,17 @@ h2 {
   font-size: 40px;
   font-weight: normal;
   letter-spacing: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  width: 100%;
+  height: auto;
+  line-height: 0;
 }
 
 .btn {
@@ -102,11 +87,18 @@ h2 {
   z-index: 60;
 }
 
+.hidden {
+  display: none;
+}
+
+.outline {
+  /*background: rgba(200,100,10,0.2);*/
+  outline: 1px solid red;
+}
+
 
 /******************************************************
-
                          СЕТКИ
-
 ******************************************************/
 
 /* общие */
@@ -125,11 +117,6 @@ h2 {
   display: table;
   clear: both;
 }
-
-.hidden {
-  display: none;
-}
-
 
 
 /* header */
@@ -1329,7 +1316,7 @@ footer p {
 .footer-bottom {
   padding-top: 37px;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 18px;
   padding-bottom: 15px;
   background: #293449;
 }
@@ -1379,7 +1366,8 @@ footer p {
   height: 30px;
   border-radius: 50%;
   background: #212a3a;
-  /*font-size: 18px;*/
+  font-size: 18px;
+  line-height: 18px;
   text-align: center;
   padding-top: 12px;
 }
@@ -1408,13 +1396,6 @@ footer p {
 /*                  Всплывающие окна                       */
 /***********************************************************/
 
-/*.blured header,
-.blured main,
-.blured footer {
-  -webkit-filter: blur(1px) grayscale(70%);
-  }*/
-
-/* карта */
 
 .popup .error {
   box-shadow: 0 0 3px 0 #ff0000;
@@ -1442,25 +1423,15 @@ footer p {
   z-index: 80;
 }
 
-.bigmap {
-  width: 941px;
-  height: 447px;
-  margin-bottom: 50px;
-}
-
 .popup-close {
   position: absolute;
   display: block;
   width: 28px;
   height: 28px;
-  top: 10px;
-  right: 10px;
+  top: 6px;
+  right: 8px;
   border-radius: 2px;
   z-index: 90;
-}
-
-.map-close {
-  background: #f7f1d9;
 }
 
 .popup-close:before,
@@ -1468,7 +1439,7 @@ footer p {
   content: "";
   position: absolute;
   display: block;
-  width: 30px;
+  width: 26px;
   height: 5px;
   background: #ee3643;
   z-index: 100;
@@ -1489,6 +1460,119 @@ footer p {
 .popup-close:after {
   transform: rotate(-45deg);
 }
+
+/* окно добавления в корзину*/
+
+.add-to-cart-popup {
+  top: 44%;
+  width: 620px;
+  height: 282px;
+  background: #ffffff;
+  border-top: 8px solid #ee3643;
+}
+
+.add-to-cart-top {
+  height: 163px;
+}
+
+.add-to-cart-top:before {
+  content: "";
+  position: absolute;
+  left: 80px;
+  top: 46px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #63a63e;
+}
+
+.add-to-cart-text:before {
+  content: "";
+  position: absolute;
+  left: -78px;
+  top: 7px;
+  width: 36px;
+  height: 7px;
+  border-radius: 1px;
+  background-color: #ffffff;
+  transform: rotate(-45deg);
+}
+
+.add-to-cart-text:after {
+  content: "";
+  position: absolute;
+  left: -86px;
+  top: 13px;
+  width: 20px;
+  height: 7px;
+  border-radius: 1px;
+  background-color: #ffffff;
+  transform: rotate(45deg);
+}
+
+.add-to-cart-text {
+  position: absolute;
+  top: 40px;
+  left: 180px;
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 18px;
+}
+
+.add-to-cart-bottom {
+  position: relative;
+  padding: 37px 80px;
+  background: #f1f1f1;
+}
+
+.checkout-btn
+ {
+  float: left;
+  width: 220px;
+}
+
+.continue-shopping-btn {
+  float: right;
+  width: 220px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#write-us-close,
+.add-to-cart-close {
+  opacity: 1;
+}
+
+/* карта */
+
+.bigmap {
+  width: 941px;
+  height: 447px;
+  margin-bottom: 50px;
+}
+
+.bigmap .popup-close {
+  top: 10px;
+  right: 10px;
+}
+
+.bigmap .popup-close:before,
+.bigmap .popup-close:after {
+  width: 30px;
+  height: 5px;
+  background: #ee3643;
+  z-index: 100;
+  top: 11px;
+  right: -1px;
+  border-radius: 1px;
+}
+
+
+.map-close {
+  background: #f7f1d9;
+}
+
+/* форма "напишите нам" */
 
 .write-us {
   width: 620px;
@@ -1564,6 +1648,80 @@ footer p {
   width: 100%;
   border: none;
   cursor: pointer;
+}
+
+/* анимация */
+
+@keyframes open-popup-animation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: scaleX(0.02);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes close-popup-animation {
+    0% {
+        transform: scaleY(1);
+    }
+    60% {
+        transform: scaleX(0.02);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes open-popup-animation2 {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes close-popup-animation2 {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.open-popup-animation {
+  animation-name: open-popup-animation;
+  animation-duration: 1s;
+}
+
+.close-popup-animation {
+  animation-name: close-popup-animation;
+  animation-duration: 1s;
+}
+
+.open-popup-animation2 {
+  animation-name: open-popup-animation2;
+  animation-duration: 0.5s;
+}
+
+.close-popup-animation2 {
+  animation-name: close-popup-animation2;
+  animation-duration: 0.5s;
 }
 
 /******************************************************

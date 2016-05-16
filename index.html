@@ -284,36 +284,48 @@
 
     <aside class="popups">
 
+      <div class="add-to-cart-popup popup hidden">
+        <a href="" class="popup-close add-to-cart-close"></a>
+        <div class="add-to-cart-top">
+          <p class="add-to-cart-text">Товар добавлен в корзину!</p>
+        </div>
+        <div class="add-to-cart-bottom clear">
+          <a href="" class="btn checkout-btn" >Оформить заказ</a>
+          <a href="" class="btn continue-shopping-btn" >Продолжить покупки</a>
+        </div>
+      </div>
+
       <div class="bigmap popup hidden">
         <a href="" class="map-close popup-close" id="map-close"></a>
         <div id="ymapsid"></div>
       </div>
-    <div class="modal-popup hidden">
-      <form action="write-us.php"  method="get" class="write-us popup">
-        <a href="" class="popup-close" id="write-us-close"></a>
-        <div class="write-top">
-          <div class="clear">
-            <div class="write-name">
-              <label for="write-name-id">Ваше имя:</label>
-              <input type="text" name="name" id="write-name-id" placeholder="Представьтесь, пожалуйста" required>
+
+      <div class="modal-popup hidden">
+        <form action="write-us.php"  method="get" class="write-us popup">
+          <a href="" class="popup-close" id="write-us-close"></a>
+          <div class="write-top">
+            <div class="clear">
+              <div class="write-name">
+                <label for="write-name-id">Ваше имя:</label>
+                <input type="text" name="name" id="write-name-id" placeholder="Представьтесь, пожалуйста" required>
+              </div>
+              <div class="write-email">
+                <label for="write-email-id">Ваш e-mail:</label>
+                <input type="email" name="email" id="write-email-id" placeholder="Для отправки ответа" required>
+              </div>
             </div>
-            <div class="write-email">
-              <label for="write-email-id">Ваш e-mail:</label>
-              <input type="email" name="email" id="write-email-id" placeholder="Для отправки ответа" required>
+            <div>
+              <label>Текст письма:</label>
+              <textarea name="write-text" id="write-us-text" placeholder="В свободной форме" required></textarea>
             </div>
+
           </div>
-          <div>
-            <label>Текст письма:</label>
-            <textarea name="write-text" id="write-us-text" placeholder="В свободной форме" required></textarea>
+          <div class="write-bottom">
+            <input type="submit" name="submit" class="btn" value="Отправить">
           </div>
 
-        </div>
-        <div class="write-bottom">
-          <input type="submit" name="submit" class="btn" value="Отправить">
-        </div>
-
-      </form>
-    </div>
+        </form>
+      </div>
 
     </aside>
 
@@ -368,16 +380,9 @@
       </div>
     </footer>
 
-<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=l-Jh70ey3cYus7_o6XXwT9mgWRhHiwI1&width=941&height=447&lang=ru_RU&sourceType=constructor&scroll=true&id=ymapsid"></script>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=l-Jh70ey3cYus7_o6XXwT9mgWRhHiwI1&width=941&height=447&lang=ru_RU&sourceType=constructor&scroll=true&id=ymapsid"></script>
 
-<script src="js/script.js"></script>
-
-
-<script  type="text/javascript" >
-  // переменные модального окна
-
-
-</script>
+    <script type="text/javascript" src="js/script.js"></script>
 
   </body>
 </html>
