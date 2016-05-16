@@ -83,7 +83,8 @@ img {
   padding: 5px 40px;
   color: #ffffff;
   background-color: #ee3643;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   z-index: 60;
 }
 
@@ -92,7 +93,6 @@ img {
 }
 
 .outline {
-  /*background: rgba(200,100,10,0.2);*/
   outline: 1px solid red;
 }
 
@@ -117,7 +117,6 @@ img {
   display: table;
   clear: both;
 }
-
 
 /* header */
 
@@ -187,7 +186,6 @@ img {
   float: right;
   width: 700px;
 }
-
 
 
 /******************************************************
@@ -328,6 +326,7 @@ img {
 }
 
 /* псевдоэлементы ленточка и корзина*/
+
 .icon-basket:before,
 .icon-bookmark:before {
   position: absolute;
@@ -343,7 +342,7 @@ img {
 }
 
 .header-order a:hover:before {
-   opacity: 1;
+  opacity: 1;
 }
 
 .header-order a:active {
@@ -352,7 +351,6 @@ img {
 }
 
 .header-order a.btn-for-order-header {
-
   background-color: #63a63e;
 }
 
@@ -365,7 +363,6 @@ img {
   color: #b1c5a8;
   opacity: 1;
 }
-
 
 /* header - средняя строка (tagline) */
 
@@ -614,13 +611,13 @@ img {
   box-sizing: border-box;
   position: relative;
   width: 300px;
-  /*min-height: 123px;*/
   padding: 27px 23px;
   padding-bottom: 23px;
   margin-bottom: 20px;
   font-family: "Cuprum", Arial, sans-serif;
   color: #ffffff;
   overflow: hidden;
+  /*min-height: 123px;*/
 }
 
 .card-name {
@@ -686,13 +683,15 @@ img {
 }
 
 .promo-label-left:before {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   top: 15px;
   left: 28px;
 }
 
 .promo-label-right:before {
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
   top: 15px;
   right: 26px;
 }
@@ -1152,7 +1151,6 @@ img {
   width: 195px;
 }
 
-
 /* about */
 
 .about-index  {
@@ -1179,8 +1177,8 @@ img {
 }
 
 .contact-text-for-map {
-  min-height: 60px; /*чтобы не съезжала кнопка при увеличении текста текста*/
-  width: 200px; /*перенос текста*/
+  min-height: 60px; /*чтобы не съезжала кнопка при увеличении текста */
+  width: 200px; /*перенос текста как в макете*/
 }
 
 .about-index ul {
@@ -1225,8 +1223,9 @@ img {
 
 
 
-/* footer */
-
+/***************************************************
+                        footer
+***************************************************/
 
 footer {
   font-family: "Cuprum", Arial, sans-serif;
@@ -1310,7 +1309,6 @@ footer p {
   opacity: 0.3;
 }
 
-
 /* footer - нижняя часть */
 
 .footer-bottom {
@@ -1392,10 +1390,9 @@ footer p {
 }
 
 
-/***********************************************************/
-/*                  Всплывающие окна                       */
-/***********************************************************/
-
+/***********************************************************
+                  Всплывающие окна
+***********************************************************/
 
 .popup .error {
   box-shadow: 0 0 3px 0 #ff0000;
@@ -1454,11 +1451,13 @@ footer p {
 }
 
 .popup-close:before {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .popup-close:after {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 /* окно добавления в корзину*/
@@ -1495,7 +1494,8 @@ footer p {
   height: 7px;
   border-radius: 1px;
   background-color: #ffffff;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .add-to-cart-text:after {
@@ -1507,7 +1507,8 @@ footer p {
   height: 7px;
   border-radius: 1px;
   background-color: #ffffff;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .add-to-cart-text {
@@ -1566,7 +1567,6 @@ footer p {
   right: -1px;
   border-radius: 1px;
 }
-
 
 .map-close {
   background: #f7f1d9;
@@ -1650,84 +1650,165 @@ footer p {
   cursor: pointer;
 }
 
-/* анимация */
+/******************************************
+                анимация
+*******************************************/
 
-@keyframes open-popup-animation {
+@-webkit-keyframes open-popup-animation {
     0% {
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
         opacity: 0;
     }
     20% {
-        transform: scaleX(0.02);
+        -webkit-transform: scaleX(0.02);
+                transform: scaleX(0.02);
         opacity: 1;
     }
     100% {
-        transform: scaleY(1);
+        -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+    }
+}
+
+@keyframes open-popup-animation {
+    0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        opacity: 0;
+    }
+    20% {
+        -webkit-transform: scaleX(0.02);
+                transform: scaleX(0.02);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+    }
+}
+
+@-webkit-keyframes close-popup-animation {
+    0% {
+        -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+    }
+    60% {
+        -webkit-transform: scaleX(0.02);
+                transform: scaleX(0.02);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        opacity: 0;
     }
 }
 
 @keyframes close-popup-animation {
     0% {
-        transform: scaleY(1);
+        -webkit-transform: scaleY(1);
+                transform: scaleY(1);
     }
     60% {
-        transform: scaleX(0.02);
+        -webkit-transform: scaleX(0.02);
+                transform: scaleX(0.02);
         opacity: 1;
     }
     100% {
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
         opacity: 0;
+    }
+}
+
+@-webkit-keyframes open-popup-animation2 {
+    from {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
     }
 }
 
 @keyframes open-popup-animation2 {
     from {
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
         opacity: 0;
     }
 
     to {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
         opacity: 1;
+    }
+}
+
+@-webkit-keyframes close-popup-animation2 {
+    from {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1;
+    }
+
+    to {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        opacity: 0;
     }
 }
 
 @keyframes close-popup-animation2 {
     from {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
         opacity: 1;
     }
 
     to {
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
         opacity: 0;
     }
 }
 
 .open-popup-animation {
-  animation-name: open-popup-animation;
-  animation-duration: 1s;
+  -webkit-animation-name: open-popup-animation;
+          animation-name: open-popup-animation;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 .close-popup-animation {
-  animation-name: close-popup-animation;
-  animation-duration: 1s;
+  -webkit-animation-name: close-popup-animation;
+          animation-name: close-popup-animation;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 .open-popup-animation2 {
-  animation-name: open-popup-animation2;
-  animation-duration: 0.5s;
+  -webkit-animation-name: open-popup-animation2;
+          animation-name: open-popup-animation2;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 
 .close-popup-animation2 {
-  animation-name: close-popup-animation2;
-  animation-duration: 0.5s;
+  -webkit-animation-name: close-popup-animation2;
+          animation-name: close-popup-animation2;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 
 /******************************************************
                       графика
 ******************************************************/
-
 
 .card-materials {
   background:  #f6b22d url(../img/promo-materials24.png) 88% 52% no-repeat;
@@ -1742,11 +1823,11 @@ footer p {
 }
 
 .card-sales {
-background: #85d179 url(../img/promo-sales24.png)  84% 52% no-repeat;
+  background: #85d179 url(../img/promo-sales24.png)  84% 52% no-repeat;
 }
 
 .card-delivery {
-background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
+  background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
 }
 
 .slider-promo-sl-1 {
@@ -1777,7 +1858,6 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
                      иконочный шрифт
 ******************************************************/
 
-
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
   display: inline-block;
@@ -1795,8 +1875,8 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
   speak: none;
 }
 
-.icon-left::before { content: "\3c"; } /* "&lt;" */
-.icon-right::before { content: "\3e"; } /* "&gt;" */
+.icon-left::before { content: "\3c"; } /* "<" */
+.icon-right::before { content: "\3e"; } /* ">" */
 .icon-basket::before { content: "\62"; } /* "b" */
 .icon-facebook::before { content: "\66"; } /* "f" */
 .icon-twitter::before { content: "\74"; } /* "t" */
@@ -1827,7 +1907,7 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
 /*                  Каталог                                */
 /***********************************************************/
 
-/* хеадер */
+/* header */
 
 a.active {
   background: #ee3643;
@@ -1869,7 +1949,7 @@ a.active {
   color: #d2d5db;
 }
 
-/* каталог - фильтры */
+/* каталог - фильтры (боковой) */
 
 .bg-block {
   background: #f7f3ec;
@@ -2050,7 +2130,6 @@ a.active {
 
 .products-filter {
   border-bottom: 1px solid #e5e5e5;
-/*  background: rgba(200,100,100,0.3);*/
 }
 
 .power-filter {
@@ -2150,9 +2229,6 @@ a.active {
   border-bottom: none;
 }
 
-/*card-*/
-
-
 /* pages */
 
 .pages {
@@ -2180,7 +2256,6 @@ a.active {
 
 .pages a:active {
   border: 1px solid #ee3643;
-
 }
 
 a.page-next {
@@ -2211,4 +2286,3 @@ a.page-next {
 .additional p {
   line-height: 24px;
 }
-
