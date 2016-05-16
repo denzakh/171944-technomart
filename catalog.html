@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="description" content="Проект Техномарт базового 13 интенсива по HTML и CSS">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
+    <title>HTML Academy: Техномарт</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic&subset=latin,cyrillic"  rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:700,400&subset=latin,cyrillic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>HTML Academy: Техномарт</title>
   </head>
   <body>
     <header class="header-main">
@@ -39,19 +39,19 @@
             <p class="header-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
           </div>
           <div class="header-account login">
-            <a href="" class="btn-login icon-logout icon-user">Равшан Джамшутович</a>
+            <a href="logout.php" class="btn-login icon-logout icon-user">Равшан Джамшутович</a>
             <div class="login-additional">
-              <a href="" class="my-orders">Мои заказы</a>
-              <a href="" class="my-account">Личный кабинет</a>
+              <a href="my-orders.php" class="my-orders">Мои заказы</a>
+              <a href="my-account.php" class="my-account">Личный кабинет</a>
             </div>
 
           </div>
         </div>
         <nav class="nav-header-main container ">
           <ul class="clear">
-            <li class="nav-item"><a href="" class=" inactive">Главная</a></li>
+            <li class="nav-item"><a href="index.html" class="">Главная</a></li>
             <li class="nav-item"><a href="" class="">Компания</a></li>
-            <li class="nav-item"><a href="catalog.html" class="">Каталог</a></li>
+            <li class="nav-item"><a class="">Каталог</a></li>
             <li class="nav-item"><a href="" class="">Новости</a></li>
             <li class="nav-item"><a href="" class="">Спецпредложения</a></li>
             <li class="nav-item"><a href="" class="">Доставка</a></li>
@@ -91,8 +91,8 @@
                 </div>
               </div>
               <div class="price-indicators clear">
-                <input type="numbers" name="price-min" class="price-min" value="0">
-                <input type="numbers" name="price-max" class="price-max" value="30000">
+                <input type="number" name="price-min" class="price-min" value="0">
+                <input type="number" name="price-max" class="price-max" value="30000">
               </div>
 
             </div>
@@ -123,16 +123,23 @@
         <div class="products-class-box"><!-- правый блок товаров и сортировки -->
           <!-- тулбар сортировки -->
           <div class="sort-toolbar clear">
-            <div class="sort-by sort-header">Сортировка:</div>
-            <div class="sort-by sort-main">
-              <a href="" class="by-price by-active">по цене</a>
-              <a href="" class="by-type">по типу</a>
-              <a href="" class="by-function">по функционалу</a>
+            <form action="sort-product.php" method="post" name="sort-product-by">
+              <div class="sort-by sort-header">Сортировка:</div>
+              <div class="sort-by sort-main">
+                <input type="radio" class="hidden" name="sort-main" id="by-price">
+                <label for="by-price">по цене</label>
+                <input type="radio" class="hidden" name="sort-main" id="by-type">
+                <label for="by-type">по типу</label>
+                <input type="radio" class="hidden" name="sort-main" id="by-function">
+                <label for="by-function">по функционалу</label>
+              </div>
+              <div class="sort-direction">
+                <input type="radio" class="hidden" name="sort-direction" id="by-direct">
+                <label for="by-direct">&#9660;</label>
+                <input type="radio" class="hidden" name="sort-direction" id="by-reverse">
+                <label for="by-reverse">&#9650;</label>
             </div>
-            <div class="sort-direction">
-              <a href="" class="by-direct by-active">&#9660;</a>
-              <a href="" class="by-reverse">&#9650;</a>
-            </div>
+            </form>
           </div>
 
           <div class="product-cards sort-products"><!-- контейнер карточек -->
@@ -302,7 +309,7 @@
           <nav class="footer-nav">
             <a href="" >Компания</a>
             <a href="" >Новости</a>
-            <a href="" >Каталог</a>
+            <a>Каталог</a>
             <a href="" >Доставка</a>
             <a href="" >Контакты</a>
             <a href="" >Материалы</a>

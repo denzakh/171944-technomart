@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Проект Техномарт базового 13 интенсива по HTML и CSS">
+    <title>HTML Academy: Техномарт</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic&subset=latin,cyrillic"  rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:700,400&subset=latin,cyrillic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>HTML Academy: Техномарт</title>
   </head>
   <body class="">
     <header class="header-main">
@@ -39,12 +39,12 @@
           </div>
           <div class="header-account">
             <!-- при входе заменить на блок аккаунта -->
-            <a href="" class="btn-enter icon-login">Войти</a>
-            <a href="" class="btn-registration">Регистрация</a></div>
+            <a href="login.php" class="btn-enter icon-login">Войти</a>
+            <a href="registration.php" class="btn-registration">Регистрация</a></div>
         </div>
         <nav class="nav-header-main container ">
           <ul class="clear">
-            <li class="nav-item"><a href="" class=" inactive">Главная</a></li>
+            <li class="nav-item"><a class="">Главная</a></li>
             <li class="nav-item"><a href="" class="">Компания</a></li>
             <li class="nav-item"><a href="catalog.html" class="">Каталог</a></li>
             <li class="nav-item"><a href="" class="">Новости</a></li>
@@ -77,12 +77,12 @@
             <input type="checkbox" name="slider-promo-checkbox" class="hidden" id="slider-promo">
             <div class="slider-promo-inner">
               <div class="slider-promo-sl-1 slider-promo-sl">
-                <h4>Дрели</h4>
-                <p>Соседям на радость!</p>
+                <h4 class="slider-promo-sl-header">Дрели</h4>
+                <p class="slider-promo-sl-text">Соседям на радость!</p>
               </div>
               <div class="slider-promo-sl-2 slider-promo-sl">
-                <h4>Перфораторы</h4>
-                <p>Настоящие мужские игрушки</p>
+                <h4 class="slider-promo-sl-header">Перфораторы</h4>
+                <p class="slider-promo-sl-text">Настоящие мужские игрушки</p>
               </div>
               <label for="slider-promo" class="slider-promo-label promo-label-left"></label>
               <label for="slider-promo" class="slider-promo-label promo-label-right"></label>
@@ -274,7 +274,7 @@
           <div class="contact-text-for-map">
             <p>Вы можете забрать товар сами, заехав в наш офис:</p>
           </div>
-          <a href="img/map-big.jpg" target="_blank" class="map-small"><img src="img/map-small.jpg" width="300" heigh="158" alt="" class="map-small"></a>
+          <a href="img/map-big.jpg" target="_blank" class="map-small"><img src="img/map-small.jpg" width="300" height="158" alt="" class="map-small"></a>
 
           <a href="" class="btn btn-contact">Заблудились? Напишите нам!</a>
         </div>
@@ -295,16 +295,16 @@
           <div class="clear">
             <div class="write-name">
               <label for="write-name-id">Ваше имя:</label>
-              <input type="text" name="name" id="write-name-id" placeholder="Представьтесь, пожалуйста" requared>
+              <input type="text" name="name" id="write-name-id" placeholder="Представьтесь, пожалуйста" required>
             </div>
             <div class="write-email">
               <label for="write-email-id">Ваш e-mail:</label>
-              <input type="pasword" name="email" id="write-email-id" placeholder="Для отправки ответа" requared>
+              <input type="email" name="email" id="write-email-id" placeholder="Для отправки ответа" required>
             </div>
           </div>
           <div>
             <label>Текст письма:</label>
-            <textarea name="write-text" id="" placeholder="В свободной форме" name="text" requared></textarea>
+            <textarea name="write-text" id="write-us-text" placeholder="В свободной форме" required></textarea>
           </div>
 
         </div>
@@ -330,7 +330,7 @@
           <nav class="footer-nav">
             <a href="" >Компания</a>
             <a href="" >Новости</a>
-            <a href="" >Каталог</a>
+            <a href="catalog.html" >Каталог</a>
             <a href="" >Доставка</a>
             <a href="" >Контакты</a>
             <a href="" >Материалы</a>
@@ -370,49 +370,12 @@
 
 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=l-Jh70ey3cYus7_o6XXwT9mgWRhHiwI1&width=941&height=447&lang=ru_RU&sourceType=constructor&scroll=true&id=ymapsid"></script>
 
-<script  type="text/javascript" charset="utf-8">
+<script src="js/script.js"></script>
+
+
+<script  type="text/javascript" >
   // переменные модального окна
-  var v_body = document.querySelector("body");
-  var modal_popup = document.querySelector(".modal-popup");
-  var btn_contact = document.querySelector(".btn-contact");
-  var form_close = modal_popup.querySelector("#write-us-close");
 
-  // переменные формы
-  var form = modal_popup.querySelector("form");
-  var inp_name = modal_popup.querySelector("[name=name]");
-  var inp_email = modal_popup.querySelector("[name=email]");
-  var textarea = modal_popup.querySelector("[name=text]");
-  var btn_submit = modal_popup.querySelector("[name=submit]");
-
-  // открываем форму
-  btn_contact.addEventListener("click", function(event) {
-    event.preventDefault(); // отменяем действие ссылки
-    v_body.classList.add("blured"); // добавляем фильтры к body
-    modal_popup.classList.remove("hidden"); // удаляем класс hidden у модального окна
-    inp_name.focus();
-      });
-
-  // закрываем форму
-  form_close.addEventListener("click", function(event) {
-    event.preventDefault(); // отменяем действие ссылки
-    v_body.classList.remove("blured"); // удаляем фильтры у body
-    modal_popup.classList.add("hidden"); // добавляем класс hidden у модального окна
-      });
-
-//карта
-  var btn_map = document.querySelector(".map-small");
-  var bigmap = document.querySelector(".bigmap");
-  var map_close = document.getElementById("map-close")
-
-  // открываем карту
-  btn_map.addEventListener("click", function(event) {
-    event.preventDefault(); // отменяем действие ссылки
-    bigmap.classList.remove("hidden"); // удаляем класс hidden у карты
-  });
-  map_close.addEventListener("click", function(event) {
-    event.preventDefault(); // отменяем действие ссылки
-    bigmap.classList.add("hidden"); // добавляем класс hidden у карты
-  });
 
 </script>
 
