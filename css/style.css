@@ -46,6 +46,7 @@ body {
   color: #000000;
   padding: 0;
   margin: 0;
+  min-width: 960px;
 }
 
 h1, h2, h3, h4 {
@@ -68,7 +69,7 @@ h2 {
   box-sizing: border-box;
   display: block;
   min-width: 20px;
-  padding: 10px;
+  padding: 11px;
   background: #ee3643;
   border-radius: 4px;
   text-align: center;
@@ -173,19 +174,19 @@ h2 {
 }
 
 .popular-brands {
-  margin-bottom: 64px;
+  margin-bottom: 63px;
 }
 
 .service {
- padding-top: 60px;
- padding-bottom: 100px;
+ padding-top: 64px;
+ padding-bottom: 102px;
  background: #f2f6f8;
 }
 
 .about {
   /*min-height: 534px; */
   padding-top: 50px;
-  padding-bottom: 87px;
+  padding-bottom: 85px;
 }
 
 /* catalog */
@@ -846,7 +847,7 @@ h2 {
 .product-description {
   padding: 0 10px;
   padding-top: 2px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .product-description > * {
@@ -868,7 +869,7 @@ h2 {
   min-height: 40px;
   font-size: 18px;
   line-height: 20px;
-  margin-top: 26px;
+  margin-top: 28px;
   margin-bottom: 11px;
   padding: 0;
 }
@@ -921,6 +922,8 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   padding: 0;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .btn-card-bay {
@@ -1024,6 +1027,7 @@ h2 {
 
 .service-top h2 {
   font-size: 30px;
+  line-height: 30px;
   margin-bottom: 25px;
 }
 
@@ -1043,7 +1047,7 @@ h2 {
   position: absolute;
   display: block;
   left: -235px;
-  padding-left: 23px;
+  padding: 23px;
   width: 240px;
   height: 61px;
   border-top: 1px solid #405069;
@@ -1051,9 +1055,8 @@ h2 {
   background: #32425c;
   font-family: "Cuprum", Arial, sans-serif;
   font-weight: bold;
-  line-height: 55px;
-  vertical-align: middle;
   font-size: 21px;
+  line-height: 12px;
   color: #ffffff;
   cursor: pointer;
 }
@@ -1146,8 +1149,9 @@ h2 {
 }
 
 .service-main h3 {
-  top: -6px;
+  top: 0px;
   font-size: 36px;
+  line-height: 32px;
 }
 
 .service-main p {
@@ -1200,8 +1204,9 @@ h2 {
 .about-index li {
   position: relative;
   font-size: 18px;
+  line-height: 18px;
   margin-left: 35px;
-  margin-top: 18px;
+  margin-top: 22px;
   letter-spacing: -0.05em;
 }
 
@@ -1216,7 +1221,7 @@ h2 {
 }
 
 .btn-about {
-  margin-top: 35px;
+  margin-top: 38px;
   width: 220px;
 }
 
@@ -1304,8 +1309,8 @@ footer p {
 
 .footer-nav a {
   text-align: right;
-  font-size: 18px;
   margin-left: 59px;
+  font-size: 18px;
   line-height: 58px;
   color: inherit;
 }
@@ -1324,6 +1329,7 @@ footer p {
 .footer-bottom {
   padding-top: 37px;
   font-size: 16px;
+  line-height: 16px;
   padding-bottom: 15px;
   background: #293449;
 }
@@ -1373,7 +1379,7 @@ footer p {
   height: 30px;
   border-radius: 50%;
   background: #212a3a;
-  font-size: 18px;
+  /*font-size: 18px;*/
   text-align: center;
   padding-top: 12px;
 }
@@ -1593,15 +1599,15 @@ background: #f6b22d url(../img/promo-delivery24.png)  86% 52% no-repeat;
   background: #59493a url(../img/slider-2.jpg) 0 0 no-repeat;
 }
 
-#service-1:checked + .service-main:after {
+.service-1:checked + .service-main:after {
   background: #f2f6f8 url(../img/delivery24.png) 50px 24px no-repeat;
 }
 
-#service-2:checked + .service-main:after {
+.service-2:checked + .service-main:after {
   background: #f2f6f8 url(../img/guarantee24.png) 138px 2px no-repeat;
 }
 
-#service-3:checked + .service-main:after {
+.service-3:checked + .service-main:after {
   background: #f2f6f8 url(../img/credite24.png) 80px 0 no-repeat;
 }
 
